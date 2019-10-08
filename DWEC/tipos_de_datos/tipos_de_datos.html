@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tipos de datos</title>
+</head>
+
+<body>
+  <form action="algo.php" method="GET" onsubmit="return Validar()">
+    <input type="text" name="campo1">
+    <input type="date" name="campo2">
+    <input type="submit">
+  </form>
+
+  <script>
+    function Validar() {
+      if (document.getElementsByTagName("input")[0].value == "") {
+        alert("Rellene el campo")
+        return false;
+      } else {
+        return true;
+      }
+    }
+  </script>
+</body>
+
+</html>

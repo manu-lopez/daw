@@ -1,0 +1,36 @@
+<!-- 3. El factorial de un número entero nes una operación matemática que consiste en multiplicar  todos  los  factores n  x  (n-1)  x  (n-2)  x  ...  x  1.  Así,  el  factorial  de 5(escrito como 5!) es igual a: 5! = 5 x 4 x 3 x 2 x 1 = 120. Utilizando la estructura for, crear un script que calcule el factorial de un número entero. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    window.onload = function () {
+
+      document.getElementById("boton").onclick = function () {
+        var factorial = 1;
+        var numberToUse = parseInt(document.getElementById("userNumber").value);
+
+        for (var i = numberToUse; i > 0; i--) {
+          factorial = factorial * i;
+        }
+        document.getElementById("factorial").value = factorial;
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <p>Introduce un número: </p>
+  <input type="number" id=userNumber><br>
+  <button id="boton">Calcular factorial</button>
+  <p>Factorial: </p>
+  <input type="number" id=factorial readonly><br>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!-- 1. Solicitar un número y presentar su tabla de multiplicar. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ejercicio 1</title>
+</head>
+
+<body>
+  <h3>Tabla de multiplicar</h3>
+  <p>Introduzca un número</p>
+  <input type="number" name="numero" id="numero" min="1" max="10">
+  <button>Mostrar</button>
+  <button>Borrar</button>
+
+  <div id=tabla></div>
+  <script>
+
+    // Generamos tabla
+    document.getElementsByTagName("button")[0].onclick = function () {
+      document.getElementById("tabla").innerHTML = Salida(document.getElementById("numero").value);
+    };
+
+    // Borramos tabla
+    document.getElementsByTagName("button")[1].onclick = function () {
+      document.getElementById("tabla").innerHTML = "";
+    }
+
+    // var numero;
+    // numero = parseInt(prompt("Introduzca un número", 0));
+    // document.write("<h3> Tabla de multiplicar del: " + numero + "</h3>")
+    // document.write(Salida(numero));
+
+    function Salida(n) {
+      var salida = "";
+
+      for (var i = 0; i <= 10; i++) {
+        salida += n + " x " + i + " = " + (n * i) + "<br>";
+      }
+
+      return salida;
+    }
+  </script>
+</body>
+
+</html>

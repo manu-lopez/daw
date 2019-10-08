@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function Calcular(base) {
+      var numeroConvertir = parseInt(document.getElementById("numero").value);
+
+      document.getElementById("salida").value = numeroConvertir.toString(base);
+    }
+  </script>
+</head>
+
+<body>
+  <h2>Calculadora</h2>
+  <p>Introduzca un número</p>
+  <input type="number" id="numero">
+  <input type="text" name="salida" id="salida" readonly><br>
+  <button onclick=(Calcular(2))>Convertir a binario</button>
+  <button onclick=(Calcular(8))>Convertir a octal</button>
+  <button onclick=(Calcular(16))>Convertir a hexadecimal</button>
+</body>
+
+</html>
