@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pop, push, shift y unshift</title>
+  <script>
+    var elementos = [];
+    function Actua(num) {
+      var valor = document.getElementById("valor").value;
+      switch (num) {
+        case 1:
+          elementos.unshift(valor);
+          break;
+        case 2:
+          elementos.push(valor);
+          break;
+        case 3:
+          elementos.shift();
+          break;
+        case 4:
+          elementos.pop();
+          break;
+      }
+      console.log(elementos);
+    };
+  </script>
+</head>
+
+<body>
+  Nuevo valor <input type="text" id="valor"><br>
+  <button onclick="Actua(1)">Añadir al principio</button>
+  <button onclick="Actua(2)">Añadir al final</button><br>
+  <button onclick="Actua(3)">Elimina al principio</button>
+  <button onclick="Actua(4)">Elimina al final</button><br>
+</body>
+
+</html>

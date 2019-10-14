@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Preguntas azar</title>
+  <script>
+    var preguntas =
+      [{
+        pregunta: "Qué comando se usa para insertar un registro en una tabla",
+        respuestas: ["ALTER", "INSERT", "DELETE"],
+        correcta: 1
+      },
+      {
+        pregunta: "¿Es equivalente DELETE FROM tabla, que TRUNCATE?",
+        respuestas: ["Sí", "No"],
+        correcta: 1
+      },
+      {
+        pregunta: "¿Cuál de los siguientes no es un comando DML?",
+        respuestas: ["INSERT", "SELECT", "UPDATE", "CREATE"],
+        correcta: 3
+      }];
+    console.log(preguntas);
+
+    // Desordenadmos las preguntas
+    preguntas.sort(function () {
+      return 0.5 - Math.random();
+    });
+
+    window.onload = function () {
+      var test = "";
+
+      preguntas.forEach(function (elemento, indice) {
+
+        //Texto de la pregunta
+        test += `<p>${indice + 1}. ${elemento.pregunta}</p>`;
+
+        // Posibles respuestas
+        elemento.respuestas.forEach(function (respuesta, indice2) {
+          var valor = elemento.correcta == indice2 ? "y" : "n";
+          test += `<input type="radio" name"${indice}" value="${valor}"> ${respuesta} <br>`;
+        });
+      });
+      document.getElementById("test").innerHTML = test;
+    }
+
+    var Corregir = function () {
+      var aciertos = 0;
+      var fallos = 0;
+      var inputs = document.getElementsByTagName("input");
+
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].checked) {
+          if (inputs[i].values == "y") aciertos++;
+          else fallos++;
+        }
+      }
+
+      console.log("Aciertos: " + aciertos + " Fallos: " + fallos);
+    };
+
+  </script>
+</head>
+
+<body>
+  <h1>Mini test de SQL</h1>
+  <div id="test"></div><br>
+  <button onclick="Corregir()">Corregir</button>
+</body>
+
+</html>
