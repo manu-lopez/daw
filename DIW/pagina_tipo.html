@@ -10,21 +10,40 @@
     #contenedor {
       width: 900px;
       height: 400px;
+      position: absolute;
     }
 
     #cabecera {
       height: 50px;
       padding: 5px;
       background-color: green;
+      position: relative;
     }
 
-    #cabecera h1 {
+    h1 {
       position: absolute;
+      top: -10%;
+      left: 50%;
     }
 
-    #logo {
+    .titulo {
+      display: inline;
+      font-size: 2em;
+      margin-left: 50%;
+    }
+
+    .tlf {
+      display: inline;
+      font-size: .8em;
+    }
+
+    .izquierda {
+      float: left;
+      padding: 0;
+    }
+
+    .logo {
       width: 4em;
-      float: right;
     }
 
     #barra-lateral {
@@ -55,13 +74,15 @@
 <body>
   <div id="contenedor">
     <div id="cabecera">
-      <h1>Prueba de maquetacion</h1>
-      <img src="http://www.iesromerovargas.es/Imagenes/fuente2.gif" alt="logo-colegio" id="logo">
+      <h1>Titulo</h1>
+      <!-- <p class="titulo">Titulo</p> -->
+      <div class="izquierda">
+        <img src="http://www.iesromerovargas.es/Imagenes/fuente2.gif" alt="logo-colegio" class="logo">
+        <p class="tlf">tlf: 666666666</p>
+      </div>
     </div>
     <div id="barra-lateral">Esta es la barra lateral</div>
-    <div id="principal">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis impedit nemo deleniti ipsum,
-      quaerat laudantium officiis temporibus quos sit odio, cumque molestias pariatur expedita. Illo soluta sunt
-      deleniti, nesciunt, aspernatur quis incidunt veniam adipisci qui totam quasi quos, deserunt nostrum!</div>
+    <div id="principal">Contenido</div>
     <div id="pie">Este es el pie de página</div>
   </div>
 </body>

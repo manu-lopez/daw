@@ -1,0 +1,56 @@
+body{
+  background-color: gray;
+}
+
+.cuerpo {
+  position: relative;
+}
+
+h2 {
+  text-align: center;
+}
+
+.ley2, .ley3, .ley4, .ley5, .ley6 {
+  width: 550px;
+  height: 200px;
+}
+
+.ley1 {
+  background-color: orange;
+  border: .2em solid black;
+  width: 70%;
+  height: 6em;
+  margin: 0 auto;
+}
+.ley2 {
+  background-color: yellow;
+  border: .2em solid #e6e600;
+  position: absolute;
+  margin: 1em 5%;
+  z-index: -1;
+}
+.ley3 {
+  background-color: turquoise;
+  border: .2em solid #00cccc;
+  margin: 1em 60%;
+  text-align: right;
+}
+.ley4 {
+  background-color: greenyellow;
+  border: .2em solid #00cc00;
+  margin: -5% auto;
+  z-index: 99;
+  text-align: center;
+}
+.ley5 {
+  background-color: #ff66ff;
+  border: .2em solid #cc00cc;
+  margin: 1em 5%;
+  z-index: -1;
+}
+.ley6 {
+  background-color: red;
+  border: .2em solid #cc0000;
+  margin: -13% 60%;
+  text-align: right;
+}
