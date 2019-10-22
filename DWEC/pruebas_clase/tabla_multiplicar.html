@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tabla multiplicar</title>
+</head>
+
+<body>
+  <h1>Tabla de multiplicar</h1>
+  <p>Inserte un número
+    <input type="number" id="numero" min="1" max="10" />
+  </p>
+  <button id="calcular">Calcular</button>
+  <div id="tabla"></div>
+
+  <script>
+    window.onload = function () {
+      document.getElementById("calcular").onclick = function () {
+        document.getElementById("tabla").innerHTML = tablaMultiplicar(document.getElementById("numero").value);
+      }
+    }
+
+    // Función que recibe un número y devuelve la tabla de multiplicar correspondiente
+    function tablaMultiplicar(n) {
+      var salida = "";
+      for (var i = 1; i <= 10; i++) {
+        salida += n + " x " + i + " = " + (n * i) + "<br/>";
+      }
+      return salida;
+    }
+  </script>
+</body>
+
+</html>

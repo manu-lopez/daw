@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Validar expresión regular</title>
+  <script>
+    var Validar = function () {
+      try {
+        var regex = new RegExp(document.getElementById("regex").value);
+        var texto = document.getElementById("texto").value;
+        document.getElementById("salida").innerHTML = regex.test(texto) ? "Si cumple" : "No cumple";
+      } catch (error) {
+        document.getElementById("salida").innerHTML = "No es una expresión regular válida"
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <p>Expresión regular <input type="text" id="regex"></p>
+  <p>Texto a comprobar: <input type="text" id="texto"></p>
+  <p><button onclick="Validar()">Comprobar</button></p>
+  <p id="salida"></p>
+</body>
+
+</html>

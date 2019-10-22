@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ejericio Prueba Formulario Regex</title>
+  <script>
+    var ControlarBotonSubmit = function (cb) {
+      document.getElementById("submit").disabled = !cb.checked;
+    }
+    var Validar = function () {
+      var salida = "";
+      var enviar = true;
+
+      //Campo1 debe tener al menos un caracter, no espacio.
+      var campo1 = document.getElementById("texto").value;
+      if (!/\S/.test(campo1)) {
+        salida += "El campo1 no es correcto";
+        enviar = false;
+      }
+
+
+      var radios = document.getElementsByName("radio");
+      var marcado = false;
+
+      for (var i = 0; i < radios.length; i++) {
+        if (radios[i].checked) marcado = true;
+      }
+
+      if (!marcado) {
+        salida += "<br> Al menos un botón de radio debe estar elegido";
+        console.log(salida);
+        enviar = false;
+      }
+
+      //select
+      if (document.getElementById("select").value == "0") {
+        salida += "<br>Debe elegir una opción del menú simple"
+        enviar = false;
+      }
+
+      document.getElementById("salida").innerHTML = salida;
+      return enviar;
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Formulario</h1>
+  <form action="" method="GET" onsubmit="return Validar()">
+    <p>Campo de texto <input type="text" name="texto1" id="texto"></p>
+    <p>CheckBox <input type="checkbox" name="cd" id="cd" onclick="ControlarBotonSubmit(this)"></p>
+    <p>Botones de radio
+      <input type="radio" name="radio" id="radio" value="r1">R1
+      <input type="radio" name="radio" id="radio" value="r2">R2
+      <input type="radio" name="radio" id="radio" value="r3">R3
+    </p>
+    <p>Menu de selección simple
+      <select name="select" id="select">
+        <option value="0">--Elegir--</option>
+        <option value="1">DAW1</option>
+        <option value="2">DAW2</option>
+      </select>
+    </p>
+    <p>Menu de selección multiple
+      <select name="select2[]" id="select2" size="2" multiple>
+        <!-- si no indiccamos en name [], nos sobreescribe con el ultimo valor, de esta manera es un array y aparecen las varias opciones-->
+        <option value="golf">Golf</option>
+        <option value="futbol">Futbol</option>
+      </select>
+    </p>
+    <input type="submit" id="submit" value="Enviar" disabled>
+  </form>
+  <p id="salida"></p>
+</body>
+
+</html>

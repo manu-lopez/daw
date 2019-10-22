@@ -1,0 +1,36 @@
+.contenedor { 
+  background:grey; 
+  /* height: 400px;
+  width: 800px; */
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+}
+
+.item { 
+  height: 50px; width: 300px; color:white; font-size:30px;
+}
+
+.item-1 { 
+  background:navy;  
+  /* order:2; */
+  /* flex-basis: 50%; */
+  flex-grow: 2;
+  flex-shrink: 6;
+} 
+.item-2 { 
+  background:blue;
+  /* flex-basis: 10%; */
+  /* order:3; */
+  flex-grow: 1;
+  flex-shrink: 9;
+} 
+.item-3 { 
+  background:SteelBlue; 
+  /* flex-basis: 25%; */
+  /* order:1;  */
+  /* align-self: flex-end; */
+  flex-grow: 1;
+  flex-shrink: 1;
+}

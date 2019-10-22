@@ -23,8 +23,10 @@ Realiza un conversor de euros a pesetas. La cantidad en euros que se quiere conv
 
   <?php
   $peseta = 166.38;
-  $euros = ((int) $_POST['euros']) ?? 0;
-  echo "<br>", $peseta * $euros;
+  if (isset(($_POST['euros']))) {
+    $euros = ((int) $_POST['euros']);
+    echo "<br>", $peseta * $euros;
+  }
   ?>
 
 </body>

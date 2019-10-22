@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Números Primos</title>
+</head>
+
+<body>
+  <h1>Comprobar números primos</h1>
+  <p>Inserte un número
+    <input type="number" id="numero" min="1" />
+  </p>
+  <p>El número <span id="primo"></span> es primo</p>
+
+  <script>
+    window.onload = function () {
+      document.getElementById("numero").onchange = function () {
+        document.getElementById("primo").innerHTML = esPrimo(this.value) ? "si" : "no";
+      }
+    }
+
+    function esPrimo(n) {
+      var result = true;
+      var i = 2;
+      while (result && i <= Math.sqrt(n)) {
+        if (n % i == 0) {
+          result = false;
+        }
+        i++
+      }
+      return result;
+    }
+  </script>
+</body>
+
+</html>

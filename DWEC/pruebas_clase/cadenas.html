@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cadenas</title>
+</head>
+
+<body>
+  <h1>Jugando con cadenas</h1>
+  <p>Introduzca una cadena de texto <input type="text" id="cadena" /></p>
+  <button id="longitud" onclick="Longitud()">Longitud de la Cadena</button>
+  <button id="mayusculas" onclick="Mayusculas()">Pasar a mayúsculas</button>
+  <button id="invertir" onclick="Invertir()">Invertir cadena</button>
+  <div id="salida">
+  </div>
+
+  <script>
+    function Longitud() {
+      document.getElementById("salida").innerHTML = "Longitud => " + document.getElementById("cadena").value.length;
+    }
+
+    function Mayusculas() {
+      document.getElementById("cadena").value = document.getElementById("cadena").value.toUpperCase();
+    }
+
+    function Invertir() {
+      document.getElementById("cadena").value = document.getElementById("cadena").value.split("").reverse().join("");
+    }
+  </script>
+</body>
+
+</html>
