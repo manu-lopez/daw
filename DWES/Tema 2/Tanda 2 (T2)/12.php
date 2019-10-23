@@ -10,21 +10,45 @@
 </head>
 
 <body>
+  <h3>Cuestionario</h3>
   <?php
-  $preguntas = [
-    01 => "",
-    02 => "",
-    03 => "",
-    04 => "",
-    05 => "",
-    06 => "",
-    07 => "",
-    08 => "",
-    09 => "",
-    10 => "",
-  ];
-
+  $preguntas = array(
+    1 => array("Que es linux?" => array("Un juego", "Un sistema operativo", "Un coche")),
+    2 => array("Que es php?" => array("Un lenguaje", "Un sistema operativo", "Un coche")),
+    3 => array("Que es Tesla?" => array("Un juego", "Un sistema operativo", "Una marca de coches"))
+  );
+  $correctas = array(
+    1 => 1,
+    2 => 0,
+    3 => 2
+  );
   ?>
+  <form action="" method="post">
+    <?php
+    foreach ($preguntas as $npregunta => $preguntas) {
+      echo "<p>" . $npregunta;
+      foreach ($preguntas as $pregunta => $respuestas) {
+        echo "- " . $pregunta . "</p>";
+        $contador = 0;
+        foreach ($respuestas as $respuesta) {
+          if ($contador == $correctas[$npregunta]) {
+            echo '<input type="radio" name="r' . $npregunta . '" value="1"> ' . $respuesta;
+          } else {
+            echo '<input type="radio" name="r' . $npregunta . '" value="0"> ' . $respuesta;
+          }
+          $contador++;
+        }
+        echo "<br>";
+      }
+    }
+    ?>
+    <br>
+    <input type="submit" value="Enviar">
+    <?php
+    $puntos = $_POST['r1'] + $_POST['r2'] + $_POST['r3'];
+    echo "Ha obtenido $puntos puntos.";
+    ?>
+  </form>
 </body>
 
 </html>
