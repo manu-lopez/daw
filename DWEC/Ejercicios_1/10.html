@@ -1,0 +1,27 @@
+<!-- Escribe un script que contenga un párrafo y cinco botones. Cada uno de los botones debe tener como etiqueta el nombre de un color y al pulsarlo pondrá el color del párrafo del mismo color que indica -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ejercicio 10</title>
+</head>
+
+<body>
+  <p id="texto" style="color:black;">ESTE TEXTO VA A CAMBIAR DE COLOR</p>
+  <button type="button" value="blue" onclick="CambiarColor(this)">azul</button>
+  <button type="button" value="yellow" onclick="CambiarColor(this)">amarillo</button>
+  <button type="button" value="green" onclick="CambiarColor(this)">verde</button>
+  <button type="button" value="black" onclick="CambiarColor(this)">negro</button>
+  <button type="button" value="red" onclick="CambiarColor(this)">rojo</button>
+
+  <script>
+    var CambiarColor = function (boton) {
+      document.getElementById("texto").style.color = boton.value;
+    }
+  </script>
+</body>
+
+</html>

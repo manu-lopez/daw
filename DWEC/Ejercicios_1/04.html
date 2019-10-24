@@ -1,4 +1,4 @@
-<!-- 4. Definir una función que muestre información sobre una cadena de texto que se le pasa como argumento. A partir de la cadena que se le pasa, la función determina si esa  cadena  está  formada  sólo  por  mayúsculas,  sólo  por  minúsculas  opor  una mezcla de ambas. -->
+<!-- 4. Definir una función que muestre información sobre una cadena de texto que se le pasa como argumento. A partir de la cadena que se le pasa, la función determina si esa  cadena  está  formada  sólo  por  mayúsculas,  sólo  por  minúsculas  o por  una mezcla de ambas. -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +11,24 @@
 </head>
 
 <body>
+  Introduzca una frase: <input type="text" name="frase" id="frase" placeholder="Escriba aqui...">
+  <button id="comprobar" value="comprobar" onclick="ComprobarFrase()">Comprobar</button>
 
+  <p id="mostrar"></p>
+
+  <script>
+    var ComprobarFrase = function () {
+      var frase = document.getElementById("frase").value;
+
+      if (frase == (frase.toUpperCase())) {
+        document.getElementById("mostrar").innerHTML = "La frase es mayuscula";
+      } else if (frase == (frase.toLowerCase())) {
+        document.getElementById("mostrar").innerHTML = "La frase es minuscula";
+      } else {
+        document.getElementById("mostrar").innerHTML = "La frase es mixta";
+      }
+    }
+  </script>
 </body>
 
 </html>
