@@ -13,6 +13,7 @@ Realiza un conversor de euros a pesetas. La cantidad en euros que se quiere conv
 </head>
 
 <body>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae cumque, atque in, harum quibusdam quis quidem inventore ab laborum, dignissimos explicabo fugit illo aliquid voluptatem repellat magnam sint repudiandae nostrum tempora magni. Nesciunt nam unde expedita nostrum sed esse neque.
   <h3>Conversor EURO-PESETA</h3>
   <p>Introduce los euros a convertir</p>
 

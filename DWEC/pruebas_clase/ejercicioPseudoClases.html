@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pseudo Clases</title>
+  <script>
+    // función constructora de un grupo
+    function Grupo(descripcion, nAlumnos) {
+      this.descripcion = descripcion;
+      this.nAlumnos = nAlumnos;
+    }
+
+    var daw1 = new Grupo("DAW1", 20);
+    var daw2 = new Grupo("DAW2", 10);
+
+    //función constructora de un instituto
+    function Instituto(codigo, nombre, grupos) {
+      this.codigo = codigo;
+      this.nombre = nombre;
+      this.grupos = grupos;
+    }
+
+    var romero = new Instituto("11007922", "Romero Vargas", [daw1, daw2]);
+    console.log(romero);
+
+    Instituto.prototype.getCodigo = function () {
+      return this.codigo;
+    }
+
+    Instituto.prototype.totalAlumnos = function () {
+      let total = 0;
+      this.grupos.forEach(function (elemento) {
+        total += elemento.nAlumnos;
+      });
+      return total;
+    }
+
+    Instituto.prototype.nuevoGrupo = function (descripcion, nAlumnos) {
+      this.grupos.push(new Grupo(descripcion, nAlumnos));
+    }
+
+
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
