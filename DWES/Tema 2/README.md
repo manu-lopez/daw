@@ -193,7 +193,8 @@
 >
 > ```php
 > $modulos = array("Programación", "Bases de datos", "Desarrollo web en entorno servidor");
-> if (in_array("Bases de datos", $modulos)) printf "Existe el módulo de nombre ".$modulo;
+> $modulo = "Bases de datos";
+> if (in_array($modulo, $modulos)) printf "Existe el módulo de nombre ".$modulo;
 > ```
 >
 > `array_search` -> como `in_array`pero devuelve la clave correspondiente o `false` si no lo encuentra.

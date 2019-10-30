@@ -1,0 +1,43 @@
+.cell {
+  background-color: gray;
+  border: 3px solid tomato;
+  border-radius: 0.8em;
+  text-align: center;
+}
+
+.header {
+  grid-area: header;
+}
+
+.nav {
+  grid-area: nav;
+}
+
+.sidebar {
+  grid-area: sidebar
+}
+
+.main {
+  grid-area: main;
+}
+
+.adver {
+  grid-area: adver;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.container {
+  width: 100%a;
+  height: 500px;
+  display: grid;
+  gap: 10px;
+  grid-template-areas:
+    "header header header header"
+    "nav nav nav nav"
+    "sidebar main main main"
+    "sidebar main main main"
+    "adver footer footer footer";
+}
