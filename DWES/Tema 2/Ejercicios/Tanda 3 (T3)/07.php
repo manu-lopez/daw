@@ -11,24 +11,38 @@
 
 <body>
   <h3>Caja fuerte</h3>
-  <form action="" method="post">
-    Introduzca la clave secreta: <input type="number" name="clave" id="clave" min=1000 max=9999>
-    <input type="submit" value="Abrir">
-  </form>
   <?php
+  session_start();
+  $password = 1234;
 
-  echo rand(1000, 9999);
-  
+  if (!isset($_SESSION['oportunidades'])) {
+    $_SESSION['oportunidades'] = 2;
+    echo "Tienes " . ($_SESSION['oportunidades'] + 1) . " oportunidades para acertar, suerte!<br>";
+    echo '<form action="" method="post">';
+    echo 'Introduzca la clave secreta: <input type="number" name="clave" id="clave" min=1000 max=9999>';
+    echo '<input type="submit" value="Abrir">';
+    echo '</form>';
+  }
+
   if (isset($_POST["clave"])) {
-    $password = rand(1000, 9999);
-    $userInput = $_POST["clave"];
-
-    if ($password == $userInput) {
-      echo "Acertaste";
+    echo "Te quedan " . $_SESSION['oportunidades'] . " oportunidades";
+    echo '<form action="" method="post">';
+    echo 'Introduzca la clave secreta: <input type="number" name="clave" id="clave" min=1000 max=9999>';
+    echo '<input type="submit" value="Abrir">';
+    echo '</form>';
+    $userInput = intval($_POST["clave"]);
+    if ($userInput == $password) {
+      echo "<br>La caja se abrió!";
     } else {
-      echo "Error";
+      if ($_SESSION['oportunidades'] == 0) {
+        echo "<br>Te quedaste sin intentos";
+      } else {
+        $_SESSION['oportunidades']--;
+        echo "<br>Clave incorrecta";
+      }
     }
   }
+
   ?>
 </body>
 
