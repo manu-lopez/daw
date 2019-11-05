@@ -20,17 +20,17 @@
   {
     if (($inicio < $final) or ($inicio > 0) or ($inicio < 9) or ($final > 0) or ($final < 9)) {
       $nuevoArray[0] = 0;
+      $valorPrevio = $array[count($array) - 1];
       foreach ($array as $clave => $valor) {
         //si es la posicion introducida
-        if ($clave == $final) {
-          $nuevoArray[$clave] = $array[$inicio];
+        if ($clave == $inicio) {
+          $nuevoArray[$clave] = $array[$final];
           // si es la ultima posición
-        } elseif ($clave == (count($array) - 1)) {
-          $nuevoArray[0] = $valor;
-          $nuevoArray[$clave] = $valor;
-          //El resto de posiciones
+        } elseif ($clave == $final) {
+          $nuevoArray[$clave] = $array[$inicio];
         } else {
-          $nuevoArray[$clave] = $valor;
+          $nuevoArray[$clave] = $valorPrevio;
+          $valorPrevio = $array[$clave];
         }
       }
       return $nuevoArray;
