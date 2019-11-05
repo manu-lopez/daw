@@ -1,7 +1,8 @@
 <!-- Realiza un programa que sea capaz de rotar todos los elementos de una matriz cuadrada una posición en el sentido de las agujas del reloj. La matriz debe tener 12 filas por 12 columnas y debe contener números generados al azar entre 0 y 100. Se debe mostrar tanto la matriz original como la matriz resultado, ambas con los números convenientemente alineados -->
 <?php
-$numeroFilas = 4;
-$numerosColumnas = 4;
+$numeroFilas = 3;
+$numerosColumnas = 3;
+
 echo "<p> MATRIZ ORIGINAL </p>";
 for ($i = 0; $i < $numeroFilas; $i++) {
   for ($k = 0; $k < $numerosColumnas; $k++) {
@@ -12,11 +13,7 @@ for ($i = 0; $i < $numeroFilas; $i++) {
   echo "<br> ";
 }
 echo "<p> MATRIZ ROTADA </p>";
-$arrayNuevo;
-for ($filas = 0; $filas < $numeroFilas; $filas++) {
-  for ($columnas = 0; $columnas < $numerosColumnas; $columnas++) { }
-  echo "<br>";
-}
+
 // $arrayNuevo;
 // for ($filas = 0; $filas < $numeroFilas; $filas++) {
 //   for ($columnas = 0; $columnas < $numerosColumnas; $columnas++) {
