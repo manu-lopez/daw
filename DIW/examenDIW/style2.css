@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  text-align: center;
+  padding: 1em;
+  background-color: #ffe4c4;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0.5em;
+  background-color: #ffd39d;
+}
+
+.main {
+  height: 600px;
+  background-color: #cfa572;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.main h2 {
+  margin-top: 20px;
+
+}
+
+.main img {
+  border-radius: 10px;
+  width: 500px;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+.main p {
+  width: 40%;
+  margin: 0 auto;
+}
+
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: bisque;
+  height: 60px;
+}
+
+.redes img {
+  margin-left: 1em;
+  width: 30px;
+}
+
+/* Forumlario secundaria2.html */
+.wrap-container {
+  background-color: rgb(207, 165, 114);
+}
+
+h2 {
+  text-align: center;
+  margin: 50px;
+}
+
+.form {
+  width: 40%;
+  height: 600px;
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
