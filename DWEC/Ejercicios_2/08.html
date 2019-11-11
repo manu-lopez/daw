@@ -1,0 +1,38 @@
+<!-- Juego  del  número  secreto.  La  página  generará  un  número  al  azar  entre  1  y  100  (ambos inclusive).El usuario irá introduciendo números por teclado y el ordenador le irá dando pistas: “mi número es menor” o “minúmero es mayor”, hasta que el usuario acierte. Entonces se le felicitará y se indicará el número de intentos que necesitó para acertar el número secreto. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ejercicio 8</title>
+</head>
+
+<body>
+  <h3>Acertar numero 1 al 100</h3>
+  Introduzca un número: <input type="number" name="numeroUsuario" id="numeroUsuario" required>
+  <button onclick='comprobarNumero(document.getElementById("numeroUsuario").value)'>Comprobar</button>
+  <p id="mostrar"></p>
+  <script>
+    let numeroAleatorio = Math.round(Math.random() * 100);
+    let contador = 0;
+
+    const comprobarNumero = numeroUsuario => {
+      let mostrar = document.getElementById("mostrar");
+
+      if (numeroUsuario == numeroAleatorio) {
+        mostrar.innerHTML = "Felicidades, has acertado!<br>Nº intentos: " + contador;
+      } else {
+        mostrar.innerHTML = "Has elegido el " + numeroUsuario + ".<br>";
+        (numeroUsuario < numeroAleatorio) ? mostrar.innerHTML += `Mi número es mayor`:
+          mostrar.innerHTML +=
+          `Mi numero es menor`;
+        contador++;
+      }
+    };
+  </script>
+</body>
+
+</html>
