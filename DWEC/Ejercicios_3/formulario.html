@@ -5,38 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="formulario.js"></script>
-  <style>
-    h1 {
-      text-align: center;
-    }
-
-    p {
-      color: red;
-    }
-
-    body {
-      background: gray;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      align-content: flex-start;
-    }
-
-    .container {
-      width: 400px;
-      margin: 0 auto;
-    }
-
-    #errorNombre,
-    #errorEmail,
-    #errorContrasenia,
-    #errorCaptcha {
-      visibility: collapse;
-    }
-  </style>
+  <link rel="stylesheet" href="formulario.css">
+  <script src="formulario.js" async></script>
   <title>Formulario</title>
 </head>
 
@@ -50,11 +20,13 @@
       Email: <input type="text" name="email" id="email">
       <p id="errorContrasenia">La contraseña debe tener 8 caracteres y un digito</p>
       Contraseña: <input type="text" name="contrasenia" id="contrasenia">
+      <p id="errorContraseniaRepetida">La contraseña no coincide.</p>
       Repetir contraseña: <input type="text" name="contraseniaRepetida" id="contraseniaRepetida">
-      <p id="errorCaptcha">Captcha incorrecto.</p>
-      Numero1 + Numero2 = <input type="text" name="resultadoCaptcha" id="resultadoCaptcha">
-      Acepto las condiciones de uso <input type="checkbox" name="condiciones" id="condiciones">
-      <input type="submit" value="Crear cuenta">
+      <p id="errorAntiBots">Pregunta seguridad incorrecta.</p>
+      <p id="antiBots"></p> <input type="text" name="resultadoAntiBots" id="resultadoAntiBots">
+      Acepto las condiciones de uso <input type="checkbox" name="condiciones" id="condiciones"
+        onclick="comprobarCondiciones(this)">
+      <input id="submitButton" type="submit" value="Crear cuenta" disabled>
     </form>
   </div>
 </body>

@@ -1,0 +1,34 @@
+h1 {
+  text-align: center;
+}
+
+p {
+  color: red;
+}
+
+#antiBots {
+  color: black;
+}
+
+body {
+  background: gray;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+
+.container {
+  width: 400px;
+  margin: 0 auto;
+}
+
+#errorNombre,
+#errorEmail,
+#errorContrasenia,
+#errorAntiBots,
+#errorContraseniaRepetida {
+  visibility: collapse;
+}
