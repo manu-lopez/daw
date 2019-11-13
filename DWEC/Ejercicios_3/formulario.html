@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="formulario.js"></script>
+  <style>
+    h1 {
+      text-align: center;
+    }
+
+    p {
+      color: red;
+    }
+
+    body {
+      background: gray;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-content: flex-start;
+    }
+
+    .container {
+      width: 400px;
+      margin: 0 auto;
+    }
+
+    #errorNombre,
+    #errorEmail,
+    #errorContrasenia,
+    #errorCaptcha {
+      visibility: collapse;
+    }
+  </style>
+  <title>Formulario</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Formulario</h1>
+    <form action="#" method="POST" onsubmit="return validation(this)">
+      <p id="errorNombre">El nombre no puede estar vacio.</p>
+      Nombre: <input type="text" name="nombre" id="nombre">
+      <p id="errorEmail">El email no es válido.</p>
+      Email: <input type="text" name="email" id="email">
+      <p id="errorContrasenia">La contraseña debe tener 8 caracteres y un digito</p>
+      Contraseña: <input type="text" name="contrasenia" id="contrasenia">
+      Repetir contraseña: <input type="text" name="contraseniaRepetida" id="contraseniaRepetida">
+      <p id="errorCaptcha">Captcha incorrecto.</p>
+      Numero1 + Numero2 = <input type="text" name="resultadoCaptcha" id="resultadoCaptcha">
+      Acepto las condiciones de uso <input type="checkbox" name="condiciones" id="condiciones">
+      <input type="submit" value="Crear cuenta">
+    </form>
+  </div>
+</body>
+
+</html>
