@@ -4,18 +4,23 @@
 const refranes = ["Este es el primer refran", "Ande yo caliente, riase la gente", "En casa de herrero, cuchara de palo"];
 // const refranes = ["Este"];
 let juego = document.getElementById("juego");
-const refranElegido = Array.from(refranes[Math.floor(Math.random() * (refranes.length))]);
-const longitudRefran = refranElegido.length;
+let parado = document.getElementById("parado");
+let refranElegido;
+let longitudRefran;
 let arrayNumeros = [];
 let intervalo;
 
-
-/* ------------------------------------------------------------------------------------ */
+/* ------------------------------- Funcion crear botones ------------------------------ */
 /*      Bucle para rellenar array con posiciones de las letras y crear los botones      */
 /* ------------------------------------------------------------------------------------ */
-for (let index = 0; index < longitudRefran; index++) {
-  arrayNumeros.push(index);
-  (!/\s/.test(refranElegido[index])) ? juego.innerHTML += `<button id="btn${index}">&nbsp</button>`: juego.innerHTML += "&nbsp";
+const crearBotones = () => {
+  refranElegido = Array.from(refranes[Math.floor(Math.random() * (refranes.length))]);
+  longitudRefran = refranElegido.length;
+
+  for (let index = 0; index < longitudRefran; index++) {
+    arrayNumeros.push(index);
+    (!/\s/.test(refranElegido[index])) ? juego.innerHTML += `<button id="btn${index}">&nbsp</button>`: juego.innerHTML += "&nbsp";
+  }
 }
 
 /* ---------------------------- Funcion para mostrar letras --------------------------- */
@@ -36,5 +41,15 @@ const comenzarContador = () => {
 
 const pararContador = () => {
   clearInterval(intervalo);
-  console.log("He parado");
+  parado.style.visibility = "visible";
 }
+
+const volverAJugar = () => {
+  juego.innerHTML = "";
+  parado.style.visibility = "collapse";
+  crearBotones();
+  pararContador();
+}
+
+/* ------------------------- Creamos primer refran a adivinar ------------------------- */
+crearBotones();
