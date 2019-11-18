@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="ejercicio1.js" defer></script>
+  <script src="provincias.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Ejercicio1</title>
+</head>
+
+<body>
+  <h1>Registro de usuario</h1>
+  <form action="graba_registro.php" onsubmit=" return validarFormulario(this)" method="GET">
+    <p id="errorEmail">El email introducido es incorrecto</p>
+    Correo electrónico: <input type="text" name="email" id="email">
+
+    <p id="errorPassword">La contraseña introducida es incorrecta</p>
+    Contraseña: <input type="text" name="password" id="password">
+
+    <p id="errorProvincia">Debe seleccionar una provincia</p>
+    Provincia: <select name="selectProvincia" id="selectProvincia">
+      <option value="default">-- Elegir provincia --</option>
+    </select>
+
+    <p id="errorFechaNacimiento">La fecha introducida es incorrecta</p>
+    Fecha de Nacimiento Dia <select name="selectDia" id="selectDia">
+    </select>
+    Mes <select name="selectMes" id="selectMes"></select>
+    Año <select name="selectAnio" id="selectAnio"></select>
+    <br>
+
+    <input type="checkbox" name="checkbox" id="checkbox" onclick="comprobarCondiciones(this)"> Acepto las condiciones de
+    uso<br>
+    <button id="submitButton" type="submitButton" disabled>Grabar registro</button>
+  </form>
+</body>
+
+</html>

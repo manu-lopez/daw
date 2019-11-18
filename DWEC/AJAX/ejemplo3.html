@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ejemplo 3</title>
+  <script>
+    const cargaPHP = () => {
+      let xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          document.getElementById("salida").innerHTML = xhr.responseText;
+        }
+      }
+      xhr.open("GET", "datos.php?n=" + document.getElementById("numero").value, true);
+      xhr.send();
+    }
+  </script>
+</head>
+
+<body>
+  <input type="number" id="numero">
+  <button onclick="cargaPHP()">Carga PHP</button>
+  <div id="salida"></div>
+</body>
+
+</html>

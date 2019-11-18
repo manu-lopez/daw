@@ -30,10 +30,11 @@ const crearBotones = () => {
 const mostrarLetras = () => {
   indiceAleatorio = Math.floor(Math.random() * arrayNumeros.length)
   posicionLetraRefran = arrayNumeros[indiceAleatorio];
-  document.getElementById(`btn${posicionLetraRefran}`).innerHTML = refranElegido[posicionLetraRefran];
+  if (!/\s/.test(refranElegido[posicionLetraRefran])) {
+    document.getElementById(`btn${posicionLetraRefran}`).innerHTML = refranElegido[posicionLetraRefran];
+  }
   arrayNumeros.splice(indiceAleatorio, 1);
 }
-
 
 const comenzarContador = () => {
   intervalo = setInterval(mostrarLetras, 2000);

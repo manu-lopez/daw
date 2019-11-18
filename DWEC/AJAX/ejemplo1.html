@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ejemplo 1</title>
+  <script>
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = () => {
+      console.log(xhttp.readyState);
+      if (xhttp.readyState == 4) {
+        console.log(xhttp.status + " " + xhttp.statusText);
+        if (xhttp.status == 200) {
+          console.log(typeof xhttp.responseText);
+          console.log(xhttp.responseText);
+          document.getElementById("demo").innerHTML = xhttp.responseText;
+        }
+      }
+    }
+    xhttp.open("GET", "datos.txt", true);
+    xhttp.send();
+  </script>
+</head>
+
+<body>
+  <p id="demo"></p>
+</body>
+
+</html>
