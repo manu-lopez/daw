@@ -7,19 +7,40 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <style>
-    .container {
-      width: 700px;
-      height: auto;
-    }
-
-    .container img {
+    #recuadro1,
+    #recuadro2,
+    #recuadro3,
+    #recuadro4,
+    #recuadro5 {
+      background-color: #ddd;
       position: relative;
       width: 200px;
       height: auto;
       -moz-animation-name: animacion1;
       -moz-animation-duration: 4s;
       -moz-animation-iteration-count: infinite;
-      -moz-animation-direction: normal;
+      -moz-animation-direction: alternate;
+      /* -moz-animation-delay: 2s; */
+    }
+
+    #recuadro1 {
+      -moz-animation-timing-function: ease;
+    }
+
+    #recuadro2 {
+      -moz-animation-timing-function: linear;
+    }
+
+    #recuadro3 {
+      -moz-animation-timing-function: ease-in;
+    }
+
+    #recuadro4 {
+      -moz-animation-timing-function: ease-out;
+    }
+
+    #recuadro5 {
+      -moz-animation-timing-function: ease-in-out;
     }
 
     @-moz-keyframes animacion1 {
@@ -35,8 +56,25 @@
 </head>
 
 <body>
-  <div class="container">
-    <img src="/bootstrap/img/img1.jpg" alt="">
+  <div id="recuadro1">
+    <h3>Timing</h3>
+    <p>Ease</p>
+  </div>
+  <div id="recuadro2">
+    <h3>Timing</h3>
+    <p>Linear</p>
+  </div>
+  <div id="recuadro3">
+    <h3>Timing</h3>
+    <p>Ease-in</p>
+  </div>
+  <div id="recuadro4">
+    <h3>Timing</h3>
+    <p>Ease-out</p>
+  </div>
+  <div id="recuadro5">
+    <h3>Timing</h3>
+    <p>Ease-in-out</p>
   </div>
 </body>
 
