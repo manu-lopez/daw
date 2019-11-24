@@ -1,0 +1,133 @@
+<!-- Ejercicio 11
+
+A partir de la página web proporcionada, añadir el código JavaScript necesario para que:
+
+    Al cargar la página, el cuadro de texto debe mostrar por defecto la URL de la propia página.
+    Al pulsar el botón "Mostrar Contenidos", se debe descargar mediante peticiones AJAX el contenido correspondiente a la URL introducida por el usuario. El contenido de la respuesta recibida del servidor se debe mostrar en la zona de "Contenidos del archivo".
+    En la zona "Estados de la petición" se debe mostrar en todo momento el estado en el que se encuentra la petición (No inicializada, cargando, completada, etc.)
+    Mostrar el contenido de todas las cabeceras de la respuesta del servidor en la zona "Cabeceras HTTP de la respuesta del servidor".
+    Mostrar el código y texto de estado de la respuesta del servidor en la zona "Código de estado". -->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Ejercicio 11 - Estados de la petición AJAX</title>
+  <style type="text/css">
+    body {
+      font: 13px Arial, Helvetica, sans-serif;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-size: 1.2em;
+    }
+
+    #recurso,
+    #enviar {
+      padding: .3em;
+      font-size: 1.2em;
+    }
+
+    #principal {
+      float: left;
+      width: 70%;
+    }
+
+    #secundario {
+      float: right;
+      width: 25%;
+    }
+
+    #contenidos,
+    #estados,
+    #cabeceras,
+    #codigo {
+      border: 2px solid #CCC;
+      background: #FAFAFA;
+      padding: 1em;
+      white-space: pre;
+    }
+
+    #contenidos {
+      min-height: 400px;
+      max-height: 600px;
+      overflow: scroll;
+    }
+
+    #estados {
+      min-height: 200px;
+    }
+
+    #cabeceras {
+      min-height: 200px;
+    }
+
+    #codigo {
+      min-height: 100px;
+      font-size: 1.5em;
+    }
+  </style>
+  <script type="text/javascript">
+    String.prototype.eliminarHTML = function () {
+      return this.replace(/</g, "&lt;").replace(/>/g, "&gt");
+    }
+
+    let estadosPeticiones = ["No inicializado", "Cargando", "Cargado", "Interactivo", "Completo"];
+
+    window.onload = function () {
+      // Mostrar url
+      document.getElementById("recurso").value = location.href;
+      //Añado manejador de evento onclick al boton
+      document.getElementById("enviar").onclick = function () {
+        document.getElementById("contenidos").innerHTML = "";
+        document.getElementById("estados").innerHTML = "";
+        document.getElementById("cabeceras").innerHTML = "";
+        document.getElementById("codigo").innerHTML = "";
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+          //Cargo estados de la peticion
+          document.getElementById("estados").innerHTML += estadosPeticiones[this.readyState] + "<br>";
+          if (this.readyState == 4) {
+            //Código de estado
+            document.getElementById("codigo").innerHTML = this.status + " " + this.statusText;
+            if (this.status == 200) {
+              // Cargo la respuesta
+              document.getElementById("contenidos").innerHTML = this.responseText.eliminarHTML();
+              //Cargo cabezeras
+              document.getElementById("cabeceras").innerHTML = this.getAllResponseHeaders();
+            }
+          }
+        }
+        xhr.open("GET", document.getElementById("recurso").value, true);
+        xhr.send();
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <form action="#">
+    URL: <input type="text" id="recurso" size="70" />
+    <input type="button" id="enviar" value="Mostrar contenidos" />
+  </form>
+
+  <div id="principal">
+    <h2>Contenidos del archivo:</h2>
+    <div id="contenidos"></div>
+
+    <h2>Cabeceras HTTP de la respuesta del servidor:</h2>
+    <div id="cabeceras"></div>
+  </div>
+
+  <div id="secundario">
+    <h2>Estados de la petición:</h2>
+    <div id="estados"></div>
+
+    <h2>Código de estado:</h2>
+    <div id="codigo"></div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+[{
+    "nombre": "Manuel López",
+    "fecha_nacimiento": "1995-06-18",
+    "notas": [{
+        "modulo": "FOL",
+        "convalidada": true
+      },
+      {
+        "modulo": "SI",
+        "convalidada": false,
+        "nota": 5
+      },
+      {
+        "modulo": "PRG",
+        "convalidada": false,
+        "nota": 7
+      },
+      {
+        "modulo": "ENDES",
+        "convalidada": false,
+        "nota": 6
+      },
+      {
+        "modulo": "BD",
+        "convalidada": false,
+        "nota": 5
+      },
+      {
+        "modulo": "LMSGI",
+        "convalidada": true
+      }
+    ]
+  },
+  {
+    "nombre": "Pepe Ayala",
+    "fecha_nacimiento": "1995-03-04",
+    "notas": [{
+        "modulo": "FOL",
+        "convalidada": true
+      },
+      {
+        "modulo": "SI",
+        "convalidada": false,
+        "nota": 8
+      },
+      {
+        "modulo": "PRG",
+        "convalidada": false,
+        "nota": 9
+      },
+      {
+        "modulo": "ENDES",
+        "convalidada": false,
+        "nota": 7
+      },
+      {
+        "modulo": "BD",
+        "convalidada": false,
+        "nota": 6
+      },
+      {
+        "modulo": "LMSGI",
+        "convalidada": true
+      }
+    ]
+  },
+  {
+    "nombre": "Luis Acaso",
+    "fecha_nacimiento": "1993-01-18",
+    "notas": [{
+        "modulo": "FOL",
+        "convalidada": false,
+        "nota": 9
+      },
+      {
+        "modulo": "SI",
+        "convalidada": false,
+        "nota": 9
+      },
+      {
+        "modulo": "PRG",
+        "convalidada": false,
+        "nota": 9
+      },
+      {
+        "modulo": "ENDES",
+        "convalidada": false,
+        "nota": 9
+      },
+      {
+        "modulo": "BD",
+        "convalidada": false,
+        "nota": 9
+      },
+      {
+        "modulo": "LMSGI",
+        "convalidada": false,
+        "nota": 9
+      }
+    ]
+  }
+]

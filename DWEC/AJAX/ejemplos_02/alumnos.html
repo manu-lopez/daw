@@ -1,0 +1,82 @@
+<!-- 
+  ordenado descendentemente por nota media
+  nombre alumno - dia de la semana de nacimiento - nota media 
+  si el modulo esta convalidado, nota = 5
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Alumnos</title>
+  <script>
+    window.addEventListener("load", function () {
+      //Obtenemos Ajax
+      let xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = () => {
+        if (xhr.status == 200 && xhr.readyState == 4) {
+          let alumnos = JSON.parse(xhr.responseText);
+          tratarAlumnos(alumnos);
+          // ordenarAlummnos(alumnos);
+          // presentarAlumnos(alumnos);
+        }
+      }
+      xhr.open("GET", "alumnos.json", true);
+      xhr.send();
+    });
+
+    const tratarAlumnos = (alumnos) => {
+      for (let alumno = 0; alumno < alumnos.length; alumno++) {
+        //Calculamos media
+        let media = 0;
+        for (let modulo = 0; modulo < alumnos[alumno].notas.length; modulo++) {
+          if (alumnos[alumno].notas[modulo].convalidada) {
+            media += 5;
+          } else {
+            media += alumnos[alumno].notas[modulo].nota;
+          }
+        }
+        alumnos[alumno].notaMedia = Number((media / alumnos[alumno].notas.length).toFixed(2));
+        //Convierto fecha a Date()
+        alumnos[alumno].fecha_nacimiento = new Date(alumnos[alumno].fecha_nacimiento);
+      }
+      ordenarAlumnos(alumnos);
+      presentarAlumnos(alumnos);
+      console.log(alumnos);
+    }
+
+    const ordenarAlumnos = (alumnos) => {
+      alumnos.sort(function (a, b) {
+        if (a.notaMedia > b.notaMedia) return -1;
+        if (a.notaMedia < b.notaMedia) return 1;
+        return 0;
+      })
+    }
+
+    const presentarAlumnos = (alumnos) => {
+      for (let alumno = 0; alumno < alumnos.length; alumno++) {
+        document.getElementById("tabla").innerHTML +=
+          `<tr>
+        <td>${alumnos[alumno].nombre}</td>
+        <td>${alumnos[alumno].fecha_nacimiento.getDay()}</td>
+        <td>${alumnos[alumno].notaMedia}</td>
+        </tr>`;
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Listado alumnos</h1>
+  <table id="tabla" border="1">
+    <tr>
+      <th>Nombre</th>
+      <th>Dia Nacimiento</th>
+      <th>Nota Media</th>
+    </tr>
+  </table>
+</body>
+
+</html>

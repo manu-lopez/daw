@@ -1,0 +1,25 @@
+{
+  "nombre": "IES Francisco Romero Vargas",
+  "codigo": "11007922",
+  "grupos": [{
+      "grupo": "ASIR1",
+      "numero_alumnos": 30,
+      "profesores": ["Juana", "Paco", "Ango", "Jose Antonio", "David"]
+    },
+    {
+      "grupo": "ASIR2",
+      "numero_alumnos": 18,
+      "profesores": ["Juana", "Paco", "Jose Antonio", "Luis", "David"]
+    },
+    {
+      "grupo": "DAW1",
+      "numero_alumnos": 20,
+      "profesores": ["Juana", "Paco", "Ango", "Luis", "Manolo", "Fernando Pérez"]
+    },
+    {
+      "grupo": "DAW2",
+      "numero_alumnos": 22,
+      "profesores": ["Juana", "Paco", "Manolo", "Fernando Pérez", "Fernando Vargas"]
+    }
+  ]
+}

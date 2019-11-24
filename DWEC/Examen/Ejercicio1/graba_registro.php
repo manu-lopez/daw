@@ -13,4 +13,3 @@ fputs($f,$_REQUEST['email'].
          $_REQUEST['selectAnio'].
          "\n");
 echo "OK";
-?>
