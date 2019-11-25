@@ -5,19 +5,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
   <title>Advivina número</title>
 </head>
 
 <body>
-  <div class="container">
-    <h1>Adivina número entre 1 y 100</h1>
-    <p id="numeroacertar"></p>
-    <p id="rangoNumero"></p>
-    Introduzca el número: <input type="number" name="numeroUsuario" id="numeroUsuario" min=1 max=100>
-    <br><button id="botonComprobar" onclick="comprobarNumero()">¿He acertado?</button>
-    <p id="resultado"></p>
+  <div class="vertical-center">
+    <div class="container">
+      <h1>Adivina número entre 1 y 100</h1>
+      <!-- <p id="numeroacertar"></p>  -->
+      <p id="rangoNumero"></p>
+      Introduzca el número: <input type="number" name="numeroUsuario" id="numeroUsuario" min=1 max=100 value="1">
+      <br><button id="botonComprobar" class="btn btn-secondary" onclick="comprobarNumero()">¿He acertado?</button>
+      <p class="text-info" id="resultado"></p>
+      <br><button id="inicializarJuego" class="btn btn-secondary" onclick="iniciarlizarJuego()">Volver a jugar</button>
+    </div>
   </div>
 </body>
 
