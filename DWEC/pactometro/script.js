@@ -141,7 +141,7 @@ const mostrar = (input, posicion) => {
 };
 
 const borrarSeleccion = () => {
-  var inputs = document.getElementsByTagName("input");
+  let inputs = document.getElementsByTagName("input");
 
   //deseleccionamos los checkbox
   for (const checkbox of inputs) {
@@ -160,18 +160,18 @@ window.onload = function () {
 
   //Creamos la tabla
   for (let index = 0; index < datosPorEscanios.length; index++) {
-    var row = tabla.insertRow(index + 1);
-    var cell0 = row.insertCell(0);
+    let row = tabla.insertRow(index + 1);
+    let cell0 = row.insertCell(0);
     cell0.innerHTML = `<input onclick="mostrar(this, ${index})" type="checkbox" id="${datosPorEscanios[index].partido}" value="${datosPorEscanios[index].partido}">`;
-    var cell1 = row.insertCell(1);
+    let cell1 = row.insertCell(1);
     cell1.style.backgroundColor = datosPorEscanios[index].color;
-    var cell2 = row.insertCell(2);
+    let cell2 = row.insertCell(2);
     cell2.innerHTML = datosPorEscanios[index].partido;
-    var cell3 = row.insertCell(3);
+    let cell3 = row.insertCell(3);
     cell3.innerHTML = datosPorEscanios[index].escanios;
-    var cell4 = row.insertCell(4);
+    let cell4 = row.insertCell(4);
     cell4.innerHTML = datosPorEscanios[index].votos;
-    var cell5 = row.insertCell(5);
+    let cell5 = row.insertCell(5);
     cell5.innerHTML = datosPorEscanios[index].porcentaje;
   }
 

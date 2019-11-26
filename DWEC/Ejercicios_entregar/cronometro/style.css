@@ -1,0 +1,31 @@
+* {
+  font-family: 'Graduate', cursive;
+}
+
+h1 {
+  margin-top: 1rem;
+}
+
+.vertical-center {
+  background: rgb(166, 192, 254);
+  background: radial-gradient(circle, rgba(166, 192, 254, 1) 0%, rgba(192, 166, 254, 1) 50%, rgba(246, 128, 132, 1) 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  background: white;
+  height: 17rem;
+  width: 30rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.horasMinutosSegundos {
+  font-size: 4rem;
+}
+
+.milisegundos {
+  font-size: 2rem;
+}

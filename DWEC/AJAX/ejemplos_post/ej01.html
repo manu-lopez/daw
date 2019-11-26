@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ejercicio 5 Ajax POST</title>
+  <script>
+    const enviar = () => {
+      let xhr = new XMLHttpRequest();
+      xhr.upload.addEventListener("progress", (evento) => {
+        document.getElementById("porcentaje").innerHTML = Math.round(evento.loaded / evento.total * 100);
+        console.log(Math.round(evento.loaded / evento.total * 100));
+      });
+      xhr.addEventListener("load", () => {
+        if (xhr.responseText != "ERROR") {
+          document.getElementById("imagen").src = xhr.responseText;
+        } else {
+          console.log("NO ES IMAGEN");
+        }
+      });
+      xhr.open("POST", "ej01.php");
+      let formulario = document.getElementById("form");
+      xhr.send(new FormData(formulario));
+    }
+  </script>
+</head>
+
+<body>
+  <form action="" id="form" onsubmit="return false;">
+    Nombre: <input type="text" name="nombre" id="nombre">
+    Contraseña: <input type="password" name="password" id="password">
+    <input type="file" name="foto">
+    <br><button onclick="enviar()">Enviar</button>
+  </form>
+  <div id="porcentaje"></div>
+  <img src="" alt="" id="imagen">
+</body>
+
+</html>

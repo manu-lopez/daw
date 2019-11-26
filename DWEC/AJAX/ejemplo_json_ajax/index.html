@@ -13,13 +13,19 @@
   <h1>Ejemplo JSON AJAX</h1>
   <div id="nombreInstituto"></div>
   <div id="codigoInstituto"></div>
-  <table id="tabla" border="1">
-    <tr>
-      <th>Grupo</th>
-      <th>Profesores</th>
-    </tr>
-  </table>
-  <div id="clasesJuana"></div>
+  <div id="grupos">
+    <table id="tabla" border="1">
+      <tr>
+        <th>Grupo</th>
+        <th>Profesores</th>
+      </tr>
+    </table>
+  </div>
+  <p>Profesores</p>
+  <select name="profesores" id="optionProfesores">
+  </select>
+  <button onclick="buscarGruposProfesor()">Mostrar Grupos</button>
+  <div id="gruposProfesor"></div>
 </body>
 
 </html>
