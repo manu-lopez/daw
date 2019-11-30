@@ -7,14 +7,15 @@ h1 {
 }
 
 .vertical-center {
-  background: rgb(166, 192, 254);
   background: radial-gradient(circle, rgba(166, 192, 254, 1) 0%, rgba(192, 166, 254, 1) 50%, rgba(246, 128, 132, 1) 100%);
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 .container {
+  margin-top: 1rem;
   background: white;
   height: 17rem;
   width: 30rem;
@@ -28,4 +29,17 @@ h1 {
 
 .milisegundos {
   font-size: 2rem;
+}
+
+#vueltas {
+  text-align: center;
+  margin-top: 1rem;
+  background: white;
+  border-radius: 1rem;
+  width: 30rem;
+  height: min-content;
+}
+
+#vueltas p {
+  margin-bottom: .1rem;
 }

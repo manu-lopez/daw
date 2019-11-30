@@ -1,0 +1,19 @@
+{
+    "categorias": [{
+            "nombre": "coches",
+            "palabras": ["Honda", "Opel", "BMW", "Audi", "Porsche"]
+        },
+        {
+            "nombre": "ciudades",
+            "palabras": ["Cadiz", "Jerez", "Madrid", "Sevilla", "Bacerlona"]
+        },
+        {
+            "nombre": "paises",
+            "palabras": ["Francia", "Italia", "Alemania", "Suiza", "Noruega"]
+        },
+        {
+            "nombre": "comida",
+            "palabras": ["Arroz", "Pasta", "Lechuga", "Atun", "Carne"]
+        }
+    ]
+}

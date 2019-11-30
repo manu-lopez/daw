@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Municipios</title>
+    <script>
+        window.onload = function () {
+            //Ajax para cargar nombre de las autonomias
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    cargaAutonomias(JSON.parse(xhr.responseText));
+                }
+            }
+            xhr.open("GET", "http://172.30.12.60/municipios_espania/autonomias.php");
+            xhr.send();
+        }
+
+        cargaAutonomias = autonomias => {
+            for (let index = 0; index < autonomias.length; index++) {
+                document.getElementById("autonomia").innerHTML +=
+                    `<option value="${autonomias[index].id}">${autonomias[index].autonomia}</option>`;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Municipios de España</h1>
+    Autonomía <select id="autonomia">
+        <option value="-1">-- Elegir --</option>
+    </select>
+</body>
+
+</html>

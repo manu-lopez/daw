@@ -22,6 +22,7 @@ const iniciarCronometro = () => {
   comienzo = new Date();
   funcionamiento();
   btnParar.disabled = false;
+  btnVuelta.disabled = false;
 }
 
 const pararCronometro = () => {
@@ -57,6 +58,10 @@ const reiniciarCronometro = () => {
   btnContinuar.innerHTML = "Iniciar";
   btnContinuar.id = "btnIniciar"
   btnIniciar.addEventListener("click", iniciarCronometro);
+
+  document.getElementById("vueltas").innerHTML = "<h3>Vueltas</h3>";
+  btnParar.disabled = true;
+  btnVuelta.disabled = true;
 }
 
 const continuarCronometro = () => {
@@ -78,11 +83,13 @@ const continuarCronometro = () => {
   funcionamiento();
 }
 
+//TODO Implementar vueltas de cronometro
 const vueltaTiempo = () => {
-  //FALTA POR IMPLEMENTAR
-  console.log(tiempohms + tiempoms);
+  document.getElementById("vueltas").innerHTML += `<p>${(tiempohms + tiempoms)}</p>`;
+  // console.log(tiempohms + tiempoms);
 }
 
+//NOTE Añadimos los distintos addEventListener
 btnIniciar.addEventListener("click", iniciarCronometro);
 btnParar.addEventListener("click", pararCronometro);
 btnVuelta.addEventListener("click", vueltaTiempo);

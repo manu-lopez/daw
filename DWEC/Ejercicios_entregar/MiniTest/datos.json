@@ -1,0 +1,25 @@
+{
+    "checkbox": {
+        "tipo": "checkbox",
+        "pregunta": "Javascript se usa en: ",
+        "respuestas": ["Frontend", "Backend", "Apps Móviles", "Diseño Gráfico"],
+        "correcta": "1,2,3"
+    },
+    "radio": {
+        "tipo": "radio",
+        "pregunta": "Javascript es:",
+        "respuestas": ["Compilado", "Interpretado"],
+        "correcta": "2"
+    },
+    "select": {
+        "tipo": "select",
+        "pregunta": "Como se representa pi en Javascript",
+        "respuestas": ["3.14", "math.pi", "Math.PI()", "Math.PI"],
+        "correcta": "4"
+    },
+    "input": {
+        "tipo": "input",
+        "pregunta": "Que significa JS",
+        "correcta": "javascript"
+    }
+}
