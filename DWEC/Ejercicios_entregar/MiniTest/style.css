@@ -1,3 +1,31 @@
 .container {
   text-align: center;
 }
+
+.vertical-center {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin: 2rem;
+}
+
+body {
+  background: rgb(222, 184, 135);
+  background: radial-gradient(circle, rgba(222, 184, 135, 1) 0%, rgba(150, 125, 92, 1) 100%);
+}
+
+.preguntasCheckbox,
+.preguntasRadio,
+.preguntasSelect,
+.preguntaInput {
+  background: white;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  width: 20rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}

@@ -13,7 +13,6 @@ const comprobarNumero = numeroBoton => {
   intentos += 1;
   document.getElementById("intentos").innerHTML = `Intentos: ` + intentos;
   numeroUsuario = parseInt(numeroBoton);
-  console.log(numeroUsuario);
   if (numeroUsuario == numeroAletaorio) {
     resultado.classList.remove("text-primary");
     resultado.classList.add("text-success");
