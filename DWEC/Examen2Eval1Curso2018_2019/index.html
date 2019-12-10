@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Programa TV</title>
+    <script>
+        const fechaProgramación = "2018-03-07";
+
+        //Prototype fecha a texto castellano
+        Date.prototype.presentaCastellano = function () {
+            let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre",
+                "Octubre", "Noviembre", "Diciembre"
+            ];
+            return this.getDate() + " de " + meses[this.getMonth()] + " de " + this.getFullYear();
+        }
+
+
+        window.addEventListener("load", () => {
+            //Muestro información de la fecha
+            document.getElementById("fechaTexto").innerHTML = new Date(fechaProgramación).presentaCastellano();
+            //Solicito por Ajax el recurso canales.php
+            let xhr = new XMLHttpRequest();
+            xhr.addEventListener("load", () => {
+                let resultado = JSON.parse(xhr.responseText);
+                if (resultado.estado == 404) {
+                    alert("No se ha podido conectar");
+                } else {
+                    mostrar(resultado.data);
+                }
+                // console.log(resultado);
+            });
+            xhr.open("GET", "canales.php");
+            xhr.send();
+        });
+
+        const mostrar = canales => {
+            canales.forEach(canal => {
+                document.getElementById("logos").innerHTML +=
+                    `<img src="logos/${canal.url}" onclick="cargaPrograma(${canal.id}, '${canal.nombre}')"/>`
+            });
+        }
+
+        const cargaPrograma = (id, nombreCanal) => {
+            let xhr = new XMLHttpRequest();
+            xhr.addEventListener("load", () => {
+                if (xhr.responseText == "error") {
+                    alert("No se puede acceder a los programas")
+                } else {
+                    let programas = JSON.parse(xhr.responseText);
+                    presentar(programas, nombreCanal);
+                }
+            });
+            xhr.open("POST", "programas.php");
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.send("id=" + id + "&fecha=" + fechaProgramación);
+        }
+
+        const presentar = (programas, nombreCanal) => {
+            //Ordenamos por hora
+            programas.sort(function (a, b) {
+                if (a.hora < b.hora) return -1;
+                if (a.hora > b.hora) return 1;
+                return 0;
+            });
+            let capaProgramas = document.getElementById("programas");
+            let salida = `<h2>${nombreCanal}</h2>`;
+            salida += `<table border='1'><tr><th>Hora</th><th>Programa</th></tr>`;
+            programas.forEach(programa => {
+                salida +=
+                    `<tr><td>${programa.hora}</td><td ${(programa.descripcion != null)?`class="resaltar"`:``}>${programa.nombre}<br><span style="display:none">${programa.descripcion}</span></td></tr>`;
+            });
+            salida += `</table>`;
+            capaProgramas.innerHTML = salida;
+
+            let prueba = document.getElementsByClassName("resaltar");
+            console.log(prueba);
+            for (let p of prueba) {
+                p.addEventListener("click", resalta);
+            };
+        }
+
+        const resalta = () => {
+            event.target.childNodes[2].style.display = "block";
+            event.target.childNodes[2].style.color = "red";
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Programación de TV del <span id="fechaTexto"></span></h1>
+    <p>Pulsa sobre el canal</p>
+    <div id="logos"></div>
+    <div id="programas"></div>
+</body>
+
+</html>
