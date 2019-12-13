@@ -9,28 +9,87 @@
     <script>
         window.onload = function () {
             //Ajax para cargar nombre de las autonomias
-            var xhr = new XMLHttpRequest();
+            let xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     cargaAutonomias(JSON.parse(xhr.responseText));
                 }
             }
-            xhr.open("GET", "http://172.30.12.60/municipios_espania/autonomias.php");
+            xhr.open("GET", "autonomias.php");
             xhr.send();
         }
 
-        cargaAutonomias = autonomias => {
+        const cargaAutonomias = autonomias => {
             for (let index = 0; index < autonomias.length; index++) {
                 document.getElementById("autonomia").innerHTML +=
                     `<option value="${autonomias[index].id}">${autonomias[index].autonomia}</option>`;
             }
+        }
+
+        const obtenerProvincias = idAutonomia => {
+            if (idAutonomia != -1) {
+                let xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        cargaProvincias(JSON.parse(xhr.responseText));
+                    }
+                }
+                xhr.open("GET", "provincias.php?autonomia=" + idAutonomia);
+                xhr.send();
+            } else {
+                document.getElementById("provincia").innerHTML = `<option value="-1">-- Elegir --</option>`;
+                document.getElementById("municipios").innerHTML = `<option value="-1">-- Elegir --</option>`;
+            }
+        }
+
+        const cargaProvincias = provincias => {
+            document.getElementById("provincia").innerHTML = `<option value="-1">-- Elegir --</option>`;
+            for (let index = 0; index < provincias.length; index++) {
+                document.getElementById("provincia").innerHTML +=
+                    `<option value="${provincias[index].id}">${provincias[index].provincia}</option>`;
+            }
+        }
+
+        const obtenerMunicipios = idProvincia => {
+            if (idProvincia != -1) {
+                let xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        cargaMunicipios(JSON.parse(xhr.responseText));
+                    }
+                }
+                xhr.open("GET", "municipios.php?provincia=" + idProvincia);
+                xhr.send();
+            } else {
+                document.getElementById("municipios").innerHTML = `<option value="-1">-- Elegir --</option>`;
+            }
+        }
+
+        const cargaMunicipios = municipios => {
+            document.getElementById("municipios").innerHTML = `<option value="-1">-- Elegir --</option>`;
+            for (let index = 0; index < municipios.length; index++) {
+                document.getElementById("municipios").innerHTML +=
+                    `<option value="${municipios[index].id}">${municipios[index].municipio}</option>`;
+            }
+        }
+
+        const cargarWikipedia = municipio => {
+
+            location.href = "https://es.wikipedia.org/wiki/" + document.getElementById("municipios")[municipio]
+                .innerHTML;
         }
     </script>
 </head>
 
 <body>
     <h1>Municipios de España</h1>
-    Autonomía <select id="autonomia">
+    Autonomía <select id="autonomia" onchange="obtenerProvincias(this.value)">
+        <option value="-1">-- Elegir --</option>
+    </select>
+    Provincia <select id="provincia" onchange="obtenerMunicipios(this.value)">
+        <option value="-1">-- Elegir --</option>
+    </select>
+    Municipios <select id="municipios" onchange="cargarWikipedia(this.selectedIndex)">
         <option value="-1">-- Elegir --</option>
     </select>
 </body>
