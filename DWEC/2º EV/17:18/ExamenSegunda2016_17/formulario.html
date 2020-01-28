@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Formulario y Ajax para pasar a jQuery</title>
+
+	<script>
+		var peticionAjax = null;
+		window.onload = function () {
+
+			if (window.XMLHttpRequest) {
+				peticionAjax = new XMLHttpRequest();
+			} else {
+				peticionAjax = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+
+			peticionAjax.onreadystatechange = CargaMenu;
+
+			peticionAjax.open('GET', 'menu.php' + '?nocache=' + Math.random(), false);
+			peticionAjax.send(null);
+		}
+
+		function CargaMenu() {
+			if (this.readyState == 4 && this.status == 200) {
+				var salida = "";
+				var obj = JSON.parse(this.responseText);
+				obj = obj.sort();
+				for (var i = 0; i < obj.length; i++) {
+					var x = document.getElementById("menu");
+					var option = document.createElement("option");
+					option.text = obj[i];
+					x.add(option);
+				}
+			}
+		}
+
+		// Presenta los datos del formulario
+		function Presenta() {
+			var nombre = document.form1.nombre.value;
+			var comentario = document.form1.comentario.value;
+			var menu = "";
+			for (var i = 0; i < document.form1.menu.options.length; i++) {
+				if (document.form1.menu.options[i].selected) {
+					menu += document.form1.menu.options[i].value + ' ';
+				}
+			}
+			var condiciones = document.form1.condiciones.checked;
+			alert("Nombre : " + nombre + "\nComentario : " + comentario + "\nMenú : " + menu + "\nCondiciones : " +
+				condiciones);
+			return false;
+		}
+	</script>
+
+</head>
+
+<body>
+	<form name="form1" onSubmit="return Presenta()">
+		Nombre: <input type="text" name="nombre" /><br />
+		Comentario: <textarea name="comentario"></textarea><br />
+		Menú de selección múltiple:
+		<select id="menu" name="menu" multiple="multiple">
+		</select><br />
+		Acepto las condiciones: <input type="checkbox" name="condiciones" checked="checked" /><br />
+		<input type="submit" value="Presentar">
+	</form>
+</body>
+
+</html>

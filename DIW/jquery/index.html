@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLlC "-//W3C//OTO XHTML 1.1//EN" '' http://www.w3.org/TR/xhtm111/DTD/ Xhtm111.dtd">
+<html>
+
+<head>
+    <!--imagenes sacadas de http://www.menudiet.es/ -->
+    <!--Ejemplo adaptado de http://www.incg.nl/blog/2008/hover-block-jquery/ -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(function () {
+                $('ul.hover_block li').hover(function () {
+                    $(this).find('img').animate({
+                        top: '182px',
+                        queue: false,
+                        duration: 500
+                    });
+                }, function () {
+                    $(this).find('img').animate({
+                        top: '0px',
+                        queue: false,
+                        duration: 500
+                    });
+                });
+            });
+        });
+    </script>
+    <style>
+        ul.hover_block li {
+            list-style: none;
+            float: left;
+            background: #fff;
+            padding: 10px;
+            width: 300px;
+            position: relative;
+            margin-right: 20px;
+        }
+
+        ul.hover_block li a {
+            display: block;
+            position: relative;
+            overflow: hidden;
+            height: 150px;
+            width: 268px;
+            padding: 16px;
+            color: #000;
+            font: 1.6em/1.3 Helvetica, Arial, sans-serif;
+        }
+
+        ul.hover_block li a {
+            text-decoration: none;
+        }
+
+        ul.hover_block li img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="hover_block">
+        <li><a href="/"><img src="gato3.png" alt="alt" /></a></li>
+        <li><a href="/"><img src="prueba.JPG" alt="alt" /></a></li>
+    </ul>
+</body>
+
+</html>

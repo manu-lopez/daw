@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: tomato;
+            margin: 10px;
+            transition: 3s;
+        }
+
+        .box p {
+            font-size: 18px;
+            color: white;
+            text-align: center;
+
+        }
+
+        .linear {
+            transition-timing-function: linear;
+        }
+
+        .ease {
+            transition-timing-function: ease;
+        }
+
+        .ease-in {
+            transition-timing-function: ease-in;
+        }
+
+        .ease-out {
+            transition-timing-function: ease-out;
+        }
+
+        .ease-in-out {
+            transition-timing-function: ease-in-out;
+        }
+
+        div:hover {
+            width: 600px;
+            background: burlywood;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejemplo animaciones</h1>
+    <div class="box linear">
+        <p>linear</p>
+    </div>
+    <div class="box ease">
+        <p>ease</p>
+    </div>
+    <div class="box ease-in">
+        <p>ease-in</p>
+    </div>
+    <div class="box ease-out">
+        <p>ease-out</p>
+    </div>
+    <div class="box ease-in-out">
+        <p>ease-in-out</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Ejemplo Picture</title>
+</head>
+
+<body>
+    <h1>Ejemplo picture</h1>
+    <p>Al redimnesionar la ventana del navegador, podemos observar como cambia la siguiente imagen.</p>
+    <div class="container">
+        <picture>
+            <source srcset="gato1.png,
+                            gato1@1x.png 1x,
+                            gato1@2x.png 2x" media="(min-width: 900px)">
+            <source type="image/webp" srcset="gato2.webp" media="(min-width: 600px)">
+            <img srcset="gato2.png" alt="">
+            <source srcset="gato3.png" media="(min-width: 200px)">
+        </picture>
+    </div>
+</body>
+
+</html>
