@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<!-- Añadimos CDN de Jquery -->
+	<script src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	<title>Formulario y Ajax para pasar a jQuery</title>
+
+	<script>
+		/* ----------------------------------- Petición AJAX ---------------------------------- */
+		$.ajax({
+			type: 'GET',
+			url: 'menu.php?nocache=' + Math.random(),
+			dataType: 'json', // al indicar json en el dataType, nos devuelve un objeto javascript
+			success: function (datos) {
+				CargaMenu(datos);
+			}
+		});
+
+		/* ------------------------------------------------------------------------------------ */
+		/*                              Función para cargar el menu                             */
+		/*                             con los datos obtenidos en la                            */
+		/*                             petición ajax desde menu.php                             */
+		/* ------------------------------------------------------------------------------------ */
+		function CargaMenu(datos) {
+			datos = datos.sort();
+			let menu = $("#menu");
+			datos.forEach(deporte => {
+				let option = document.createElement("option");
+				option.innerHTML = deporte;
+				menu.append(option);
+			});
+		}
+
+		// Presenta los datos del formulario
+		function Presenta() {
+			let nombre = $('input[name="nombre"]').val();
+			let comentario = $('textarea[name="comentario"]').val();
+			let menu = $('#menu').val();
+			let condiciones = $('input[name="condiciones"]').is(':checked');
+			alert("Nombre : " + nombre + "\nComentario : " + comentario + "\nMenú : " + menu + "\nCondiciones : " +
+				condiciones);
+			return false;
+		}
+	</script>
+
+</head>
+
+<body>
+	<form name="form1" onSubmit="return Presenta()">
+		Nombre: <input type="text" name="nombre" /><br />
+		Comentario: <textarea name="comentario"></textarea><br />
+		Menú de selección múltiple:
+		<select id="menu" name="menu" multiple="multiple">
+		</select><br />
+		Acepto las condiciones: <input type="checkbox" name="condiciones" checked="checked" /><br />
+		<input type="submit" value="Presentar">
+	</form>
+</body>
+
+</html>

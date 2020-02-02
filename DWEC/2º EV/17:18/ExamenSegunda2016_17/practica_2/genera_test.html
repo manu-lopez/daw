@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        /* color más oscuro mientras desarrollo */
+        /* la pantalla blanca me molesta la vista */
+        body {
+            background-color: gray;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
+    <title>Test</title>
+</head>
+
+<body>
+    Categoría: <select id="categoria">
+        <option value="1">Javascript</option>
+        <option value="2" selected>jQuery</option>
+        <option value="3">AngularJS</option>
+        <option value="4">PHP</option>
+        <option value="5">SQL</option>
+    </select>
+    Cantidad de preguntas: <input type="number" id="cantidadPreguntas" value="10">
+    <button id="generarTest">Generar Test</button>
+    Tiempo transcurrido: <a id="temporizador"></a>
+    <hr>
+    <div id="preguntas"></div>
+    <br>
+    <button id="corregirTest" disabled>Corregir Test</button>
+    <hr>
+    <div id="resultado"></div>
+</body>
+
+</html>
