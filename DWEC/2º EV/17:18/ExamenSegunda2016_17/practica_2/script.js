@@ -1,74 +1,92 @@
-let cantidadPreguntas = $("#cantidadPreguntas").val();
+let cantidadPreguntas;
 
 const generarTest = () => {
     let categoria = $("#categoria").val();
+    cantidadPreguntas = $("#inputCantidadPreguntas").val();
 
-    // Limpiamos los div
-    $("#preguntas").empty();
-    $("#resultado").empty();
+    if (cantidadPreguntas == "" || cantidadPreguntas <= 0) {
+        $("#inputCantidadPreguntas").focus();
 
-    // Activamos boton
-    $("#corregirTest").prop('disabled', false);
+        // Limpiamos los div
+        $("#preguntas").empty();
+        $("#resultado").empty();
 
-    // Iniciamos tiempo
-    comenzarTiempo();
+        // Paramos temporizardor
+        clearInterval(interval);
 
-    $.getJSON("test.json", function (data) {
+        //Desactivamos boton corregir
+        $("#corregirTest").prop('disabled', true);
+    } else {
 
-        // Obtengo la longitud del JSON
-        let longitudJSON = Object.keys(data).length;
-        let arrayID = [];
+        // Limpiamos los div
+        $("#preguntas").empty();
+        $("#resultado").empty();
 
-        // Genero array con IDs 
-        for (let index = 0; index < longitudJSON; index++) {
-            arrayID.push(index);
-        }
+        // Activamos boton corregir
+        $("#corregirTest").prop('disabled', false);
 
-        // Genero preguntas aleatorias
-        for (let index = 0; index < cantidadPreguntas; index++) {
-            // Obtengo ID aleatorio dentro de la cantidad de preguntas que tengo
-            let idAleatorio = generarAleatorio(arrayID);
+        // Iniciamos temporizador
+        comenzarTiempo();
 
-            // Saco ese ID del array
-            let idPregunta = arrayID.splice(idAleatorio, 1)[0];
-            let datosPregunta = data[idPregunta];
+        $.getJSON("test.json", function (data) {
 
-            if (datosPregunta.categoria == categoria) {
-                $("#preguntas").append(`<p>${index+1} - ${datosPregunta.pregunta}</p>`);
+            // Obtengo la longitud del JSON
+            let longitudJSON = Object.keys(data).length;
+            let arrayID = [];
 
-                // Para mostrar de manera aleatoria las respuestas
-                // Obtengo la cantidad de respuestas que hay
-                let cantidadRespuestas = datosPregunta.respuestas.length
-                let arrayIDRespuestas = [];
-                // Creo un array con los ID
-                for (let index = 0; index < cantidadRespuestas; index++) {
-                    arrayIDRespuestas.push(index);
-                }
-
-                // Recorro las respuestas y las muestro
-                for (let index = 0; index < cantidadRespuestas; index++) {
-                    // Obtengo ID aleatorio dentro de la cantidad de respuesta que tengo
-                    let idAleatorio = generarAleatorio(arrayIDRespuestas);
-                    // Lo saco del array de ID
-                    let idPregunta = arrayIDRespuestas.splice(idAleatorio, 1)[0];
-                    let datosRespuestaPregunta = datosPregunta.respuestas[idPregunta];
-
-                    $("#preguntas").append(`<input type="radio" name="${datosPregunta.correcta}" value="${datosRespuestaPregunta.idrespuesta}"> ${datosRespuestaPregunta.respuesta}<br>`);
-                }
-            } else {
-                index--;
+            // Genero array con IDs 
+            for (let index = 0; index < longitudJSON; index++) {
+                arrayID.push(index);
             }
-        }
-    })
+
+            // Genero preguntas aleatorias
+            for (let index = 0; index < cantidadPreguntas; index++) {
+                // Obtengo ID aleatorio dentro de la cantidad de preguntas que tengo
+                // Saco ese ID del array
+                let idPregunta = arrayID.splice(generarAleatorio(arrayID), 1)[0];
+                let datosPregunta = data[idPregunta];
+
+
+                if (datosPregunta.categoria == categoria) {
+                    // Añado pregunta
+                    $("#preguntas").append(`<br><p id="${datosPregunta.idpregunta}">${index+1} - ${datosPregunta.pregunta}</p>`);
+
+                    // Para mostrar de manera aleatoria las respuestas
+                    // Obtengo la cantidad de respuestas que hay
+                    let cantidadRespuestas = datosPregunta.respuestas.length
+                    let arrayIDRespuestas = [];
+                    // Creo un array con los ID
+                    for (let index = 0; index < cantidadRespuestas; index++) {
+                        arrayIDRespuestas.push(index);
+                    }
+
+                    // Recorro las respuestas y las muestro
+                    for (let index = 0; index < cantidadRespuestas; index++) {
+                        // Obtengo ID aleatorio dentro de la cantidad de respuesta que tengo
+                        // Lo saco del array de ID
+                        let idPregunta = arrayIDRespuestas.splice(generarAleatorio(arrayIDRespuestas), 1)[0];
+                        let datosRespuestaPregunta = datosPregunta.respuestas[idPregunta];
+
+                        // Añado respuestas posibles de la pregunta
+                        $("#preguntas").append(`<input type="radio" id="${datosPregunta.idpregunta}" name="${datosPregunta.correcta}" value="${datosRespuestaPregunta.idrespuesta}"> ${datosRespuestaPregunta.respuesta}<br>`);
+                    }
+                } else {
+                    index--;
+                }
+            }
+        })
+    }
 }
 
+// Función que comienza el temporizador
 let interval;
 const comenzarTiempo = () => {
     let comienzo = new Date;
 
     interval = setInterval(function () {
-        // $('#temporizador').text(Math.round((new Date - comienzo) / 1000, 0) + " s");
         let diferencia = new Date(new Date - comienzo);
+
+        // Haciendo uso del operador ternario, añadimos 0 a segundos/minutos para que se vea mejor.
         $('#temporizador').text((diferencia.getMinutes() < 10 ? "0" + diferencia.getMinutes() : diferencia.getMinutes()) +
             ":" + (diferencia.getSeconds() < 10 ? "0" + diferencia.getSeconds() : diferencia.getSeconds()));
     }, 1000);
@@ -81,15 +99,20 @@ const corregirTest = () => {
     // Paramos temporizardor
     clearInterval(interval);
 
+    //Obtenemos todos los input radio y comprobamos si es correcto o no.
     $("#preguntas :radio").each(function () {
         if (this.checked) {
             if (this.value == this.name) {
+                $(`#${this.id}`).css("color", "green");
                 aciertos += 1;
             } else {
+                $(`#${this.id}`).css("color", "red");
                 fallos += 1;
             }
         }
     });
+
+    // Calculamos nota
     let resultado = (((aciertos - fallos) * 10) / cantidadPreguntas);
     $("#resultado").append(`<p>ACIERTOS: ${aciertos} FALLOS: ${fallos} NOTA EXAMEN: ${resultado}</p>`);
 
@@ -97,6 +120,7 @@ const corregirTest = () => {
     $("#corregirTest").prop('disabled', true);
 }
 
+// Funcion que nos devuelve aleatorio dentro de la longitud del array
 const generarAleatorio = array => {
     return Math.floor(Math.random() * array.length);
 }

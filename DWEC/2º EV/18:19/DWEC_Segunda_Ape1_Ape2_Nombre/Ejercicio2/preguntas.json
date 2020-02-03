@@ -1,0 +1,465 @@
+[{
+	"pregunta": "¿Cuántas veces se casó Enrique VIII?",
+	"tema": "Historia",
+	"respuestas": [{
+		"respuesta": "6",
+		"correcta": "s"
+	}, {
+		"respuesta": "5",
+		"correcta": "n"
+	}, {
+		"respuesta": "8",
+		"correcta": "n"
+	}, {
+		"respuesta": "3",
+		"correcta": "n"
+	}]
+}, {
+	"pregunta": "El emperador Calígula nombró senador a su...",
+	"tema": "Historia",
+	"respuestas": [{
+		"respuesta": "Gato",
+		"correcta": "n"
+	}, {
+		"respuesta": "Hijo",
+		"correcta": "n"
+	}, {
+		"respuesta": "Caballo",
+		"correcta": "s"
+	}, {
+		"respuesta": "Hermano",
+		"correcta": "n"
+	}]
+}, {
+	"pregunta": "¿Cuál de estas no es una de las 7 maravillas del mundo antiguo?",
+	"tema": "Historia",
+	"respuestas": [{
+		"respuesta": "La estatua de Zeus en Olimpia, Grecia",
+		"correcta": "n"
+	}, {
+		"respuesta": "La isla de la Atlántida",
+		"correcta": "n"
+	}, {
+		"respuesta": "El Templo de Artemisa",
+		"correcta": "n"
+	}, {
+		"respuesta": "Ermita de Guía de Jerez",
+		"correcta": "s"
+	}]
+}, {
+	"pregunta": "¿El antiguo Egipto fue conquistado en el año 30 a.C. por cuál imperio?",
+	"tema": "Historia",
+	"respuestas": [{
+		"respuesta": "Griego",
+		"correcta": "n"
+	}, {
+		"respuesta": "Mongol",
+		"correcta": "n"
+	}, {
+		"respuesta": "Vicentino",
+		"correcta": "n"
+	}, {
+		"respuesta": "Romano",
+		"correcta": "s"
+	}]
+}, {
+	"pregunta": "¿En qué província española se encuentran ubicadas las cuevas de Altimira?",
+	"tema": "Historia",
+	"respuestas": [{
+		"respuesta": "Asturias",
+		"correcta": "n"
+	}, {
+		"respuesta": "Burgos",
+		"correcta": "n"
+	}, {
+		"respuesta": "Cantabria",
+		"correcta": "s"
+	}, {
+		"respuesta": "Valencia",
+		"correcta": "n"
+	}]
+}, {
+	"pregunta": "¿En qué continente está Ecuador?",
+	"tema": "Cultura",
+	"respuestas": [{
+		"respuesta": "Europa",
+		"correcta": "n"
+	}, {
+		"respuesta": "Asia",
+		"correcta": "n"
+	}, {
+		"respuesta": "America",
+		"correcta": "s"
+	}, {
+		"respuesta": "Oceania",
+		"correcta": "n"
+	}]
+}, {
+	"pregunta": "¿Dónde originaron los juegos olímpicos?",
+	"tema": "Cultura",
+	"respuestas": [{
+		"respuesta": "Italia",
+		"correcta": "n"
+	}, {
+		"respuesta": "España",
+		"correcta": "n"
+	}, {
+		"respuesta": "Inglaterra",
+		"correcta": "n"
+	}, {
+		"respuesta": "Grecia",
+		"correcta": "s"
+	}]
+}, {
+	"pregunta": "¿Qué año llegó Cristóbal Colón a América?",
+	"tema": "Cultura",
+	"respuestas": [{
+		"respuesta": "1492",
+		"correcta": "s"
+	}, {
+		"respuesta": "1792",
+		"correcta": "n"
+	}, {
+		"respuesta": "1692",
+		"correcta": "n"
+	}, {
+		"respuesta": "1892",
+		"correcta": "n"
+	}]
+}, {
+	"pregunta": "¿Qué producto cultiva más Guatemala?",
+	"tema": "Cultura",
+	"respuestas": [{
+		"respuesta": "Coles",
+		"correcta": "n"
+	}, {
+		"respuesta": "Tomatoes",
+		"correcta": "n"
+	}, {
+		"respuesta": "Marihuana",
+		"correcta": "n"
+	}, {
+		"respuesta": "Café",
+		"correcta": "s"
+	}]
+}, {
+	"pregunta": "¿Cuál es el país más grande del mundo?",
+	"tema": "Cultura",
+	"respuestas": [{
+		"respuesta": "Marruecos",
+		"correcta": "n"
+	}, {
+		"respuesta": "Rusia",
+		"correcta": "s"
+	}, {
+		"respuesta": "Mongolia",
+		"correcta": "n"
+	}, {
+		"respuesta": "Inglaterra",
+		"correcta": "n"
+	}]
+}, {
+	"pregunta": "¿Cuál fue la primera versión en 3D de ‘Grand Theft Auto’?",
+	"tema": "Gaming",
+	"respuestas": [{
+		"respuesta": "GTA 2",
+		"correcta": "n"
+	}, {
+		"respuesta": "GTA Vice City",
+		"correcta": "n"
+	}, {
+		"respuesta": "GTA III",
+		"correcta": "s"
+	}, {
+		"respuesta": "GTA San Andreas",
+		"correcta": "n"
+	}]
+}, {
+	"pregunta": "¿Qué es un ‘niño rata’?",
+	"tema": "Gaming",
+	"respuestas": [{
+		"respuesta": "Un personaje de Pókemon",
+		"correcta": "n"
+	}, {
+		"respuesta": "Wismichu",
+		"correcta": "n"
+	}, {
+		"respuesta": "Un jugador insoportable, por lo general de corta edad.",
+		"correcta": "s"
+	}, {
+		"respuesta": "JBalvin",
+		"correcta": "n"
+	}]
+}, {
+	"pregunta": "Dreamcast es:",
+	"tema": "Gaming",
+	"respuestas": [{
+		"respuesta": "Un personaje de Final Fantasy",
+		"correcta": "n"
+	}, {
+		"respuesta": "Una consola de Sega",
+		"correcta": "s"
+	}, {
+		"respuesta": "La ciudad de origen de Resident Evil",
+		"correcta": "n"
+	}, {
+		"respuesta": "El nombre del castillo final de Mario",
+		"correcta": "n"
+	}]
+}, {
+	"pregunta": "Primer equipo Español en llegar lejos en una competición mundial de CS",
+	"tema": "Gaming",
+	"respuestas": [{
+		"respuesta": "Wizards",
+		"correcta": "n"
+	}, {
+		"respuesta": "LastShow",
+		"correcta": "n"
+	}, {
+		"respuesta": "x6tence",
+		"correcta": "s"
+	}, {
+		"respuesta": "overGame",
+		"correcta": "n"
+	}]
+}, {
+	"pregunta": "¿Cuál es el resultado de 3,15 X 100?",
+	"tema": "Matemáticas",
+	"respuestas": [{
+		"respuesta": "3150",
+		"correcta": "n"
+	}, {
+		"respuesta": "31.5",
+		"correcta": "n"
+	}, {
+		"respuesta": "315",
+		"correcta": "s"
+	}, {
+		"respuesta": "0.315",
+		"correcta": "n"
+	}]
+}, {
+	"pregunta": "¿Qué distancia recorrerá un coche en tres horas si va a 50 Km/h?",
+	"tema": "Matemáticas",
+	"respuestas": [{
+		"respuesta": "300 km",
+		"correcta": "n"
+	}, {
+		"respuesta": "100 km",
+		"correcta": "n"
+	}, {
+		"respuesta": "500 km",
+		"correcta": "n"
+	}, {
+		"respuesta": "150 km",
+		"correcta": "s"
+	}]
+}, {
+	"pregunta": "Juan tiene 10 años, Marcos tienes 5 más que Juan y Pepito tiene 3 menos que Juan. ¿Cuántos años tiene Pepito?",
+	"tema": "Matemáticas",
+	"respuestas": [{
+		"respuesta": "15 años",
+		"correcta": "n"
+	}, {
+		"respuesta": "7 años",
+		"correcta": "s"
+	}, {
+		"respuesta": "13 años",
+		"correcta": "n"
+	}, {
+		"respuesta": "5 años",
+		"correcta": "n"
+	}]
+}, {
+	"pregunta": "Tengo 20 metros de cinta roja para hacer lazos en unos paquetes de regalo idénticos. Para cada lazo necesito 50 centímetros de cinta. ¿Cuántos lazos puedo hacer?",
+	"tema": "Matemáticas",
+	"respuestas": [{
+		"respuesta": "70 Lazos",
+		"correcta": "n"
+	}, {
+		"respuesta": "100 Lazos",
+		"correcta": "n"
+	}, {
+		"respuesta": "40 Lazos",
+		"correcta": "s"
+	}, {
+		"respuesta": "30 Lazos",
+		"correcta": "n"
+	}]
+}, {
+	"pregunta": "¿Qué es más ligero?",
+	"tema": "Matemáticas",
+	"respuestas": [{
+		"respuesta": "100 gramos de hierro",
+		"correcta": "s"
+	}, {
+		"respuesta": "1 kilo de plumas",
+		"correcta": "n"
+	}, {
+		"respuesta": "1 kilo de lana",
+		"correcta": "n"
+	}, {
+		"respuesta": "1 kilo de algodón",
+		"correcta": "n"
+	}]
+}, {
+	"pregunta": "¿Qué es más ligero?",
+	"tema": "Matemáticas",
+	"respuestas": [{
+		"respuesta": "100 gramos de hierro",
+		"correcta": "s"
+	}, {
+		"respuesta": "1 kilo de plumas",
+		"correcta": "n"
+	}, {
+		"respuesta": "1 kilo de lana",
+		"correcta": "n"
+	}, {
+		"respuesta": "1 kilo de algodón",
+		"correcta": "n"
+	}]
+}, {
+	"pregunta": "¿Qué país es el segundo más grande del mundo en términos de población?",
+	"tema": "Geografía",
+	"respuestas": [{
+		"respuesta": "Rusia",
+		"correcta": "n"
+	}, {
+		"respuesta": "Indonesia",
+		"correcta": "n"
+	}, {
+		"respuesta": "India",
+		"correcta": "s"
+	}, {
+		"respuesta": "China",
+		"correcta": "n"
+	}]
+}, {
+	"pregunta": "¿Cuál de estos países es bañado únicamente por un océano?",
+	"tema": "Geografía",
+	"respuestas": [{
+		"respuesta": "Gran Bretaña",
+		"correcta": "s"
+	}, {
+		"respuesta": "Rusia",
+		"correcta": "n"
+	}, {
+		"respuesta": "Canadá",
+		"correcta": "n"
+	}, {
+		"respuesta": "México",
+		"correcta": "n"
+	}]
+}, {
+	"pregunta": "¿Cuántos continentes hay en la Tierra?",
+	"tema": "Geografía",
+	"respuestas": [{
+		"respuesta": "5",
+		"correcta": "n"
+	}, {
+		"respuesta": "6",
+		"correcta": "s"
+	}, {
+		"respuesta": "11",
+		"correcta": "n"
+	}, {
+		"respuesta": "7",
+		"correcta": "n"
+	}]
+}, {
+	"pregunta": "¿En qué frontera se encuentra el Everest?",
+	"tema": "Geografía",
+	"respuestas": [{
+		"respuesta": "China e India",
+		"correcta": "n"
+	}, {
+		"respuesta": "Nepal e India",
+		"correcta": "n"
+	}, {
+		"respuesta": "China y Nepal",
+		"correcta": "s"
+	}, {
+		"respuesta": "China y Rusia",
+		"correcta": "n"
+	}]
+}, {
+	"pregunta": "Al descendiente del cruce de un asno y una yegua se le conoce como:",
+	"tema": "Ciencia",
+	"respuestas": [{
+		"respuesta": "Burro",
+		"correcta": "n"
+	}, {
+		"respuesta": "Asno",
+		"correcta": "n"
+	}, {
+		"respuesta": "Yegüita",
+		"correcta": "n"
+	}, {
+		"respuesta": "Mulo",
+		"correcta": "s"
+	}]
+}, {
+	"pregunta": "Para los botánicos, el tomate es una:",
+	"tema": "Ciencia",
+	"respuestas": [{
+		"respuesta": "Fruta",
+		"correcta": "s"
+	}, {
+		"respuesta": "Hortaliza",
+		"correcta": "n"
+	}, {
+		"respuesta": "Verdura",
+		"correcta": "n"
+	}, {
+		"respuesta": "Legumbre",
+		"correcta": "n"
+	}]
+}, {
+	"pregunta": "La fuerza física que la tierra ejerce sobre los cuerpos hacia su centro es la:",
+	"tema": "Ciencia",
+	"respuestas": [{
+		"respuesta": "Normal",
+		"correcta": "n"
+	}, {
+		"respuesta": "Gravedad",
+		"correcta": "s"
+	}, {
+		"respuesta": "Rozamiento",
+		"correcta": "n"
+	}, {
+		"respuesta": "AntiGravitatoria",
+		"correcta": "n"
+	}]
+}, {
+	"pregunta": "¿Cómo se llama la teoría que considera que todos los organismos descendemos del mismo ancestro?",
+	"tema": "Ciencia",
+	"respuestas": [{
+		"respuesta": "Teorema Pitágoras",
+		"correcta": "n"
+	}, {
+		"respuesta": "Creacionismo",
+		"correcta": "n"
+	}, {
+		"respuesta": "Gradualismo",
+		"correcta": "n"
+	}, {
+		"respuesta": "Darwinismo",
+		"correcta": "s"
+	}]
+}, {
+	"pregunta": "La columna más a la derecha de la tabla periódica esta compuesta por:",
+	"tema": "Ciencia",
+	"respuestas": [{
+		"respuesta": "Haluros",
+		"correcta": "n"
+	}, {
+		"respuesta": "Gases nobles",
+		"correcta": "s"
+	}, {
+		"respuesta": "Minerales",
+		"correcta": "n"
+	}, {
+		"respuesta": "Excepciones",
+		"correcta": "n"
+	}]
+}]
