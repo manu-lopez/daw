@@ -8,7 +8,6 @@ const mostrarInfo = () => {
     //Contamos cantidad de palabras en diccionario.js
     let cantidadPalabras = palabrasJSON.length;
 
-
     // Contamos palabras con todas las vocales
     let palabrasCincoVocales = []
     palabrasJSON.forEach(palabra => {
