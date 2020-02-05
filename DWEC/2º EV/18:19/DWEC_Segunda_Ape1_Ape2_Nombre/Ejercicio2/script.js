@@ -5,11 +5,9 @@ let contadorPregunta = 0;
 let puntos = 0;
 let nombreUsuario, preguntas, btnPregunta, btnPlantarse;
 
-//TODO Grabar datos antes de terminar
-//TODO Acabar al no haber más preguntas
-//TODO Acabar al pulsar plantarse
-//TODO Acabar al equivocarse
 
+// Función que da comienzo al juego.
+// Muestra el menu con las opciones
 const comenzarJuego = () => {
 
   if (contadorPregunta < 1) {
@@ -17,15 +15,19 @@ const comenzarJuego = () => {
   }
 
   if (nombreUsuario == "") {
+    $("#modalNombreUsuario").modal("show");
     console.log("VACIO");
+
   } else {
+    // Limpiamos los datos anteriores
     divBienvenida.empty();
     divPreguntas.empty();
+
     if (contadorPregunta < 1) {
       divBienvenida.append(`<p> Hola <b>${nombreUsuario}</b>, que deseas hacer?</p>`);
       divBienvenida.append(`<p> Puntos: <b>${puntos}</b></p>`);
     } else {
-      divBienvenida.append(`<p> ¡HAS ACERTADO! <b>${nombreUsuario}</b>, que deseas hacer?</p>`);
+      divBienvenida.append(`<p> <span class="acertaste">¡HAS ACERTADO!</span> <b>${nombreUsuario}</b>, que deseas hacer?</p>`);
       divBienvenida.append(`<p> Puntos: <b>${puntos}</b></p>`);
     }
     divBienvenida.append(`<button class="btn btn-secondary" id="pregunta">&#x2705; Pregunta &#x2705;</button>
@@ -35,7 +37,7 @@ const comenzarJuego = () => {
     btnPlantarse = $('#plantarse');
 
     btnPregunta[0].addEventListener("click", pregunta);
-    btnPlantarse[0].addEventListener("click", plantarse);
+    btnPlantarse[0].addEventListener("click", acabarJuego);
 
     if (contadorPregunta == 0) {
       obtenerDatos();
@@ -44,32 +46,43 @@ const comenzarJuego = () => {
 
 }
 
+
+// Esta funcion nos elige la pregunta y nos la muestra
 const pregunta = () => {
   contadorPregunta++;
 
   // Limpiamos el div
   divPreguntas.empty();
 
-  // Seleccionamos pregunta y añadimos a div
-  let indice = (Math.floor(Math.random() * numeroPreguntas.length));
+  if (numeroPreguntas.length >= 1) {
+    // Seleccionamos pregunta y añadimos a div
+    let indice = (Math.floor(Math.random() * numeroPreguntas.length));
 
-  let preguntaAleatoria = preguntas[numeroPreguntas.splice(indice, 1)];
-  divPreguntas.append(`<br><h3>Pregunta: ${contadorPregunta}</h3>`);
-  divPreguntas.append(`<br><p>Tema: <b>${preguntaAleatoria.tema}</b></p>`);
-  divPreguntas.append(`<p>Pregunta: <b>${preguntaAleatoria.pregunta}</b></p>`);
+    let preguntaAleatoria = preguntas[numeroPreguntas.splice(indice, 1)];
+    divPreguntas.append(`<br><h3>Pregunta: ${contadorPregunta}</h3>`);
+    divPreguntas.append(`<br><p>Tema: <b>${preguntaAleatoria.tema}</b></p>`);
+    divPreguntas.append(`<p>Pregunta: <b>${preguntaAleatoria.pregunta}</b></p>`);
 
+    // Mostramos las diferentes respuestas
+    preguntaAleatoria.respuestas.forEach(function (respuestas, index) {
+      divPreguntas.append(`<button class="btnRespuesta btn btn-outline-dark"value="${respuestas.correcta}"> ${respuestas.respuesta}</button><br>`);
 
-  preguntaAleatoria.respuestas.forEach(function (respuestas, index) {
-    divPreguntas.append(`<button class="btnRespuesta btn btn-outline-dark"value="${respuestas.correcta}"> ${respuestas.respuesta}</button><br>`);
+      // Asiganamos el listener a cada boton
+      $(".btnRespuesta")[index].addEventListener("click", comprobarRespuesta);
+    });
 
-    $(".btnRespuesta")[index].addEventListener("click", comprobarRespuesta);
-  });
+  } else {
+    acabarJuego();
+    divPreguntas.append(`<br>Ya no hay más preguntas`);
+  }
 
-
+  // Desactivamos botones
   btnPregunta.prop('disabled', true);
   btnPlantarse.prop('disabled', true);
 }
 
+
+// Comprobamos si es correcta la respuesta indicada
 const comprobarRespuesta = () => {
 
   if (event.target.value == "s") {
@@ -77,11 +90,22 @@ const comprobarRespuesta = () => {
     comenzarJuego();
   } else {
     alert("HAS FALLADO 😓");
-    // acabarJuego();
+    acabarJuego();
   }
 }
 
+// Grabamos datos en archivo y acabamos juego
 const acabarJuego = () => {
+
+  $.ajax({
+    type: 'post',
+    url: 'graba.php',
+    data: `usuario=${nombreUsuario}&puntos=${puntos}`,
+    success: function () {
+      console.log("Datos guardados");
+    },
+  });
+
   btnPregunta.prop('disabled', true);
   btnPlantarse.prop('disabled', true);
 
@@ -92,6 +116,10 @@ const acabarJuego = () => {
   divBienvenida.append(`<p> Puntos: <b>${puntos}</b></p>`);
 }
 
+// Función para contar los puntos según aciertas
+// Si la respuesta elegida es la correcta se anotará un punto 
+// la primera vez, 2 puntos la segunda, 4 la tercera, 8 la cuarta
+// y así sucesivamente (potencias de 2)
 const sumarPuntos = () => {
 
   if (contadorPregunta <= 2) {
@@ -101,6 +129,7 @@ const sumarPuntos = () => {
   }
 }
 
+// Obtengo los datos del archivo json
 const obtenerDatos = () => {
 
   $.ajax({
