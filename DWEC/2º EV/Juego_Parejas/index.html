@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <title>Juego Parejas</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- <h1 style="text-align: center;">Juego Parejas</h1> -->
+        <nav>
+            <div class="nav-wrapper">
+                <a class="brand-logo center">Juego Parejas</a>
+            </div>
+        </nav>
+        <div class="menu">
+            <div class="input-field col s6">
+                <input id="nombre" type="text">
+                <label>Nombre</label>
+            </div>
+            <div class="dificultad">
+                <p>
+                    <label>
+                        <input class="with-gap" name="nivel" type="radio" value="6" checked />
+                        <span>Fácil</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input class="with-gap" name="nivel" type="radio" value="8" />
+                        <span>Medio</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input class="with-gap" name="nivel" type="radio" value="10" />
+                        <span>Dificil</span>
+                    </label>
+                </p>
+            </div>
+            <div class="botonJugar">
+                <a class="waves-effect waves-light btn"><i class="material-icons">play_arrow</i></a>
+            </div>
+        </div>
+        <div class="juego"></div>
+    </div>
+</body>
+
+</html>

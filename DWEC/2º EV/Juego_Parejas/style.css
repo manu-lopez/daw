@@ -1,0 +1,77 @@
+body {
+    background: #b2dfdb;
+}
+
+.nav-wrapper {
+    margin-top: 1rem;
+    background-color: #008080;
+}
+
+
+.menu {
+    width: 20rem;
+    margin: 2rem auto;
+    border-radius: 1rem;
+}
+
+.menu label {
+    color: black;
+}
+
+.dificultad,
+.botonJugar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.juego {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+/* CSS CARTA */
+.carta {
+    height: 250px;
+    margin: .3rem;
+
+    /* Patrón */
+    background:
+        radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent),
+        radial-gradient(circle, transparent 20%, slategray 20%, slategray 80%, transparent 80%, transparent) 50px 50px,
+        linear-gradient(#A8B1BB 8px, transparent 8px) 0 -4px,
+        linear-gradient(90deg, #A8B1BB 8px, transparent 8px) -4px 0;
+    background-color: slategray;
+    background-size: 100px 100px, 100px 100px, 50px 50px, 50px 50px;
+    border: 2px solid rgb(165, 164, 164);
+    border-radius: 1.5rem;
+}
+
+.carta img {
+    width: 50%;
+    margin: 4rem 3rem;
+}
+
+.front {
+    /* visibility: collapse; */
+}
+
+.back {
+    background: white;
+    visibility: collapse;
+}
+
+/* Tamaño */
+.d6 {
+    width: 100px;
+    flex: 0 0 30%;
+}
+
+.d8 {
+    flex: 0 0 22%;
+}
+
+.d10 {
+    flex: 0 0 17%;
+}
