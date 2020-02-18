@@ -21,11 +21,10 @@ const mostrarCartas = dificultad => {
     for (let index = 0; index < dificultad; index++) {
         $(".juego").append(`<div id="card${index}" class="carta d${dificultad} front"></div>
                             <div id="card${index}" class="carta d${dificultad} back"><img src="img/${arrayFrutas[index]}.png"></div>`);
+        $('#card' + index).on("click", function () {
+            girarCarta("card" + index);
+        });
     }
-
-    $('.carta').on("click", function () {
-        girarCarta($(this).attr('id'));
-    });
 }
 
 const girarCarta = id => {
@@ -44,15 +43,50 @@ const girarCarta = id => {
 }
 
 const comprobarPareja = () => {
-    console.log($('#' + cartasElegidas[0] + ".back img").attr('src'));
 
-    // if (cartasElegidas[0] == cartasElegidas[1]) {
-    //     console.log("Iguales");
-    // } else {
-    //     console.log("Diferentes");
-    // }
+    let carta1 = $('#' + cartasElegidas[0] + ".back img").attr('src');
+    let carta2 = $('#' + cartasElegidas[1] + ".back img").attr('src');
 
-    contador == 0;
+    if (carta1 == carta2) {
+        // Quitamos ambas cartas
+        $('#' + cartasElegidas[0] + ".back").css("opacity", "40%");
+        $('#' + cartasElegidas[1] + ".back").css("opacity", "40%");
+
+    } else {
+        // Volteamos ambas cartas
+        voltearCartas();
+
+        // Volvemos a activar el click en ambas cartas
+        $('#' + cartasElegidas[0]).on("click", function () {
+            girarCarta($(this).attr("id"));
+        });
+        $('#' + cartasElegidas[1]).on("click", function () {
+            girarCarta($(this).attr("id"));
+        });
+
+
+    }
+    contador = 0;
+    cartasElegidas = [];
+}
+
+voltearCartas = () => {
+    $('#' + cartasElegidas[0] + ".back").delay(800).queue(function (next) {
+        $(this).css("visibility", "collapse");
+        next();
+    });
+    $('#' + cartasElegidas[0] + ".front").delay(800).queue(function (next) {
+        $(this).css("visibility", "visible");
+        next();
+    });
+    $('#' + cartasElegidas[1] + ".back").delay(800).queue(function (next) {
+        $(this).css("visibility", "collapse");
+        next();
+    });
+    $('#' + cartasElegidas[1] + ".front").delay(800).queue(function (next) {
+        $(this).css("visibility", "visible");
+        next();
+    });
 }
 
 $('.botonJugar').click(function () {
