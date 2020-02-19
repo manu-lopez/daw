@@ -13,6 +13,8 @@
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <title>Juego Parejas</title>
 </head>
 
@@ -25,10 +27,11 @@
             </div>
         </nav>
         <div class="menu">
-            <div class="input-field col s6">
+            <!-- <div class="input-field col s6">
                 <input id="nombre" type="text">
                 <label>Nombre</label>
-            </div>
+            </div> -->
+            <h3 style="text-align: center;">Dificultad</h3>
             <div class="dificultad">
                 <p>
                     <label>
@@ -52,6 +55,10 @@
             <div class="botonJugar">
                 <a class="waves-effect waves-light btn"><i class="material-icons">play_arrow</i></a>
             </div>
+        </div>
+        <div class="datos">
+            <p style="font-size: 1.2rem;">Tiempo transcurrido: <a id="temporizador"></a></p>
+            <p class="intentos">Intentos: 0</p>
         </div>
         <div class="juego"></div>
     </div>
