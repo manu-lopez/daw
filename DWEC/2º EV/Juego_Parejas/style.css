@@ -3,7 +3,7 @@ body {
 }
 
 .nav-wrapper {
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
     background-color: #008080;
 }
 
@@ -46,11 +46,15 @@ body {
     background-size: 100px 100px, 100px 100px, 50px 50px, 50px 50px;
     border: 2px solid rgb(165, 164, 164);
     border-radius: 1.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .carta img {
-    width: 50%;
-    margin: 4rem 3rem;
+    width: 10rem;
+    height: 10rem;
 }
 
 .front {
@@ -74,4 +78,11 @@ body {
 
 .d10 {
     flex: 0 0 17%;
+}
+
+.footer-copyright, .page-footer{
+    background-color: #008080 !important;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }

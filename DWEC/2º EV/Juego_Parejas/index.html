@@ -19,49 +19,60 @@
 </head>
 
 <body>
-    <div class="container">
-        <!-- <h1 style="text-align: center;">Juego Parejas</h1> -->
-        <nav>
-            <div class="nav-wrapper">
-                <a class="brand-logo center">Juego Parejas</a>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="nav-wrapper">
+                    <a class="brand-logo center">Juego Parejas</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="menu">
+                <h3 style="text-align: center;">Dificultad</h3>
+                <div class="dificultad">
+                    <p>
+                        <label>
+                            <input class="with-gap" name="nivel" type="radio" value="6" checked />
+                            <span>Fácil</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input class="with-gap" name="nivel" type="radio" value="8" />
+                            <span>Medio</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input class="with-gap" name="nivel" type="radio" value="10" />
+                            <span>Dificil</span>
+                        </label>
+                    </p>
+                </div>
+                <div class="botonJugar">
+                    <a class="waves-effect waves-light btn"><i class="material-icons">play_arrow</i></a>
+                </div>
             </div>
-        </nav>
-        <div class="menu">
-            <!-- <div class="input-field col s6">
-                <input id="nombre" type="text">
-                <label>Nombre</label>
-            </div> -->
-            <h3 style="text-align: center;">Dificultad</h3>
-            <div class="dificultad">
-                <p>
-                    <label>
-                        <input class="with-gap" name="nivel" type="radio" value="6" checked />
-                        <span>Fácil</span>
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        <input class="with-gap" name="nivel" type="radio" value="8" />
-                        <span>Medio</span>
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        <input class="with-gap" name="nivel" type="radio" value="10" />
-                        <span>Dificil</span>
-                    </label>
-                </p>
+            <div class="datos" style="visibility: collapse;">
+                <p style="font-size: 1.2rem;">Tiempo transcurrido: <a id="temporizador"></a></p>
+                <p class="intentos">Intentos: 0</p>
             </div>
-            <div class="botonJugar">
-                <a class="waves-effect waves-light btn"><i class="material-icons">play_arrow</i></a>
+            <div class="juego"></div>
+        </div>
+    </main>
+
+    <footer class="page-footer">
+        <div class="footer-copyright">
+            <div class="container">
+                2020 - DAW
+                <a class="grey-text text-lighten-4 right" href="https://github.com/manu-lopez/">Manuel López</a>
             </div>
         </div>
-        <div class="datos">
-            <p style="font-size: 1.2rem;">Tiempo transcurrido: <a id="temporizador"></a></p>
-            <p class="intentos">Intentos: 0</p>
-        </div>
-        <div class="juego"></div>
-    </div>
+    </footer>
+
 </body>
 
 </html>

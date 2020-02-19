@@ -10,6 +10,7 @@ const comenzarJuego = () => {
     nombre = $('#nombre').val();
     mostrarCartas($('input[name=nivel]:checked').val());
     $('.botonJugar a').addClass("disabled");
+    $('.datos').css("visibility", "visible");
 }
 
 const mostrarCartas = dificultad => {
