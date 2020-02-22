@@ -7,9 +7,10 @@ let interval;
 
 const comenzarJuego = () => {
     comenzarTiempo();
-    nombre = $('#nombre').val();
+    intentos = 0;
+    $(".intentos").html("Intentos: " + intentos);
     mostrarCartas($('input[name=nivel]:checked').val());
-    $('.botonJugar a').addClass("disabled");
+    $('.botonJugar').addClass("disabled");
     $('.datos').css("visibility", "visible");
 }
 
@@ -54,7 +55,6 @@ const comprobarPareja = () => {
     let carta2 = $('#' + cartasElegidas[1] + ".back img").attr('src');
 
     intentos++;
-    console.log(intentos);
     $(".intentos").html("Intentos: " + intentos);
 
     if (carta1 == carta2) {
@@ -72,7 +72,7 @@ const comprobarPareja = () => {
                 'Has acertado!',
                 'success'
             )
-            $('.botonJugar a').removeClass("disabled");
+            $('.botonJugar').removeClass("disabled");
             clearInterval(interval);
         }
     } else {
@@ -112,6 +112,16 @@ voltearCartas = () => {
     });
 }
 
+// Resetear Juego
+const reset = () => {
+    intentos = 0;
+    clearInterval(interval);
+    $(".juego").empty();
+    $('.botonJugar').removeClass("disabled");
+    $('#temporizador').text("00:00");
+    $(".intentos").html("Intentos: 0");
+}
+
 // Temporizador
 const comenzarTiempo = () => {
     let comienzo = new Date;
@@ -125,6 +135,9 @@ const comenzarTiempo = () => {
     }, 1000);
 }
 
-$('.botonJugar a').click(function () {
+$('.botonJugar').click(function () {
     comenzarJuego();
+})
+$('.botonReset').click(function () {
+    reset();
 })

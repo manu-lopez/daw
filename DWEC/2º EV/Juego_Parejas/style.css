@@ -19,7 +19,7 @@ body {
 }
 
 .dificultad,
-.botonJugar {
+.divbotonJugar {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -80,7 +80,8 @@ body {
     flex: 0 0 17%;
 }
 
-.footer-copyright, .page-footer{
+.footer-copyright,
+.page-footer {
     background-color: #008080 !important;
     position: absolute;
     bottom: 0;
