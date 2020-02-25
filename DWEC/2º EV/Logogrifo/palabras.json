@@ -1,29 +1,72 @@
-[{
+{
+    "10": [{
         "palabra": "chirmoloso",
         "definicion": "Mal sujeto, aficionado a montar intrigas y enredos"
-    },
-    {
+    }, {
+        "palabra": "acomodarse",
+        "definicion": "Funcionar, ajustar o adaptar la propia conducta o preferencias dentro ciertos parámetros, expectativas o circunstancias."
+    }, {
+        "palabra": "documentar",
+        "definicion": "Probar, justificar la verdad de algo con documentos."
+    }],
+    "9": [{
         "palabra": "carnicero",
         "definicion": "Trabaja y vende cosas poco vegetarianas"
-    },
-    {
+    }, {
+        "palabra": "descolgar",
+        "definicion": "Bajar lo que está colgado"
+    }, {
+        "palabra": "velocidad",
+        "definicion": "Cantidad de espacio que se recorre por unidad de tiempo."
+    }],
+    "8": [{
         "palabra": "carotida",
         "definicion": "Irriga la cabeza"
-    },
-    {
+    }, {
+        "palabra": "anecdota",
+        "definicion": "Narración de un suceso privado o secreto."
+    }, {
+        "palabra": "destacar",
+        "definicion": "Poner de relieve, resaltar, llamar la atención."
+    }],
+    "7": [{
         "palabra": "ecuoreo",
         "definicion": "Del mar"
-    },
-    {
+    }, {
+        "palabra": "empresa",
+        "definicion": "Unidad de organización dedicada a actividades industriales, mercantiles o de prestación de servicios con fines lucrativos."
+    }, {
+        "palabra": "portero",
+        "definicion": "Puesto que desempeña Coque en LQSA"
+    }],
+    "6": [{
         "palabra": "cosita",
-        "definicion": "Una cosa muy pequeña"
-    },
-    {
-        "palabra": "bombo",
-        "definicion": "Intrumento de Manolo"
-    },
-    {
+        "definicion": "Una cosa muy pequeña."
+    }, {
+        "palabra": "imagen",
+        "definicion": "Vale más que mil palabras."
+    }, {
+        "palabra": "python",
+        "definicion": "Lenguaje favorito de Paco"
+    }],
+    "5": [{
+        "palabra": "huevo",
+        "definicion": "Fue antes que la gallina, después 🤔"
+    }, {
+        "palabra": "miura",
+        "definicion": "Toro de lidia de la ganadería de reses bravas denominada Miura, fundada en 1842."
+    }, {
+        "palabra": "playa",
+        "definicion": "Lugar de concentración para aliviar la calor"
+    }],
+    "4": [{
         "palabra": "bola",
         "definicion": "Redonda y pesada"
-    }
-]
+    }, {
+        "palabra": "atar",
+        "definicion": "Utilizar ligaduras o nudos para que algo quede sujeto o inmóvil."
+    }, {
+        "palabra": "dora",
+        "definicion": "... la exploradora!"
+    }]
+}

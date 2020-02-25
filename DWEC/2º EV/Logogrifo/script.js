@@ -1,9 +1,13 @@
 let posiciones = [""];
 const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
-const obtenerPalabras = () => {
+const obtenerJson = () => {
     $.getJSON("palabras.json", function (data) {
-        dibujarPalabras(data);
+        let palabrasElegidas = [];
+        for (let index = 10; index >= 4; index--) {
+            palabrasElegidas.push(data[index][Math.floor(Math.random() * 3)]);
+        }
+        dibujarPalabras(palabrasElegidas);
     });
 }
 
@@ -61,4 +65,4 @@ const comprobarLetra = () => {
 
 let fecha = new Date();
 $(".time").append(`<time>${fecha.getDate() + " de " + meses[fecha.getMonth()] + " de " + fecha.getFullYear()}</time>`)
-obtenerPalabras();
+obtenerJson();
