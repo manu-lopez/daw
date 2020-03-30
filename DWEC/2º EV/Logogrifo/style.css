@@ -1,7 +1,6 @@
 input {
     width: 50px;
     height: 50px;
-    /* background-color: tomato; */
     border: 1px solid black;
     text-align: center;
     font-size: large;
@@ -108,7 +107,7 @@ h3 {
 
     article {
         -moz-columns: 2;
-        /* How many columns? */
+        /* Cuantas columnas?*/
 
         -webkit-columns: 2;
         columns: 2;
